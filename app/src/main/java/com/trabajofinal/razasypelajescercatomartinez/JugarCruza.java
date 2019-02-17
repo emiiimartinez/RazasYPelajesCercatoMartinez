@@ -26,7 +26,6 @@ public class JugarCruza extends AppCompatActivity {
             }
         });
         ImageButton cab1 = (ImageButton) findViewById(R.id.caballo1);
-
         cab1.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.relincho1);
 
@@ -43,7 +42,6 @@ public class JugarCruza extends AppCompatActivity {
             }
         });
         ImageButton cab2 = (ImageButton) findViewById(R.id.caballo2);
-
         cab2.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.resopla);
 
@@ -63,7 +61,6 @@ public class JugarCruza extends AppCompatActivity {
             }
         });
         ImageButton cab3 = (ImageButton) findViewById(R.id.caballo3);
-
         cab3.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.resopla);
 
@@ -83,7 +80,6 @@ public class JugarCruza extends AppCompatActivity {
             }
         });
         ImageButton cab4 = (ImageButton) findViewById(R.id.caballo4);
-
         cab4.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.resopla);
 

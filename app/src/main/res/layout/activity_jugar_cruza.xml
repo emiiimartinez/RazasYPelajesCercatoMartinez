@@ -11,20 +11,20 @@
         android:layout_width="382dp"
         android:layout_height="218dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cuartodemilla_bayo" />
+        app:srcCompat="@drawable/caballo1" />
 
     <ImageButton
         android:id="@+id/caballo1"
         android:layout_width="180dp"
         android:layout_height="160dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:adjustViewBounds="true"
         android:background="@android:color/background_light"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toStartOf="@+id/caballo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caballo"
-        app:srcCompat="@drawable/cuartodemilla_bayo" />
+        app:srcCompat="@drawable/caballo1" />
 
     <ImageButton
         android:id="@+id/caballo2"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toEndOf="@+id/caballo1"
         app:layout_constraintTop_toTopOf="@+id/caballo1"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/mestizo_tobiano" />
+        app:srcCompat="@drawable/caballo1" />
 
     <ImageButton
         android:id="@+id/caballo3"
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toEndOf="@+id/caballo2"
         app:layout_constraintTop_toTopOf="@+id/caballo2"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/mestizo_tordillocanela" />
+        app:srcCompat="@drawable/caballo1" />
 
     <ImageButton
         android:id="@+id/caballo4"
@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/caballo3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/caballo3"
-        app:srcCompat="@drawable/spc_zainocolorado" />
+        app:srcCompat="@drawable/caballo1" />
 
     <ImageButton
         android:id="@+id/volver"
