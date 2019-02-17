@@ -63,6 +63,7 @@ public class JugarRazasB extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mp.start();
+                mp.release();
                 try {
                     sleep(3000);
                 } catch (InterruptedException e) {

@@ -32,7 +32,6 @@ public class Configuracion extends AppCompatActivity {
                 String audio="";
                 RadioButton lista=(RadioButton) findViewById(R.id.lista);
                 RadioButton grilla=(RadioButton) findViewById(R.id.grilla);
-                RadioButton iC=(RadioButton) findViewById(R.id.imagenimagen);
                 RadioButton iA=(RadioButton) findViewById(R.id.imagenpalabra);
                 RadioButton iB=(RadioButton) findViewById(R.id.palabraimagen);
                 CheckBox checkRazasyPelajes = (CheckBox) findViewById(R.id.razasypelajes);
@@ -50,9 +49,6 @@ public class Configuracion extends AppCompatActivity {
                 }
                 if (iB.isChecked()){
                     formasDeInteraccion="B";
-                }
-                if (iC.isChecked()){
-                    formasDeInteraccion="C";
                 }
                 if (checkRazasyPelajes.isChecked()){
                     cRazasyPelajes=true;
@@ -97,7 +93,6 @@ public class Configuracion extends AppCompatActivity {
         RadioButton grilla=(RadioButton) findViewById(R.id.grilla);
         RadioButton iA= (RadioButton) findViewById(R.id.imagenpalabra);
         RadioButton iB= (RadioButton) findViewById(R.id.palabraimagen);
-        RadioButton iC= (RadioButton) findViewById(R.id.imagenimagen);
         CheckBox checkRazasyPelajes = (CheckBox) findViewById(R.id.razasypelajes);
         CheckBox checkCruza =(CheckBox) findViewById(R.id.cruzas);
         Switch sNivel=(Switch) findViewById(R.id.nivel);
@@ -127,16 +122,11 @@ public class Configuracion extends AppCompatActivity {
         else {
             checkRazasyPelajes.setChecked(true);
         }
-        if (formasDeI == "C"){
-            iC.setChecked(true);
+        if (formasDeI == "B"){
+            iB.setChecked(true);
         }
         else {
-            if (formasDeI == "B"){
-                iB.setChecked(true);
-            }
-            else {
-                iA.setChecked(true);
-            }
+            iA.setChecked(true);
         }
         if (nivel=="2"){
             sNivel.setChecked(true);
