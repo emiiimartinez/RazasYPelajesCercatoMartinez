@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JugarRazas"></activity>
+        <activity
+            android:name=".ReconocimientoGrilla"
+            android:label="@string/title_activity_reconocimiento_grilla"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ReconocimientoLista"
+            android:label="@string/title_activity_reconocimiento_lista"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".JugarRazas" />
         <activity android:name=".JugarCruza" />
 
         <service
@@ -26,6 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FinalCopa"
+            android:label="@string/title_activity_final_copa"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
