@@ -12,21 +12,26 @@ import android.widget.ImageButton;
 
 import static java.lang.Thread.sleep;
 
-public class JugarCruza extends AppCompatActivity {
+public class JugarRazasA extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jugar_cruza);
+        setContentView(R.layout.activity_jugar_razas_a);
         SharedPreferences preferencias =getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+        String formatoR=preferencias.getString("formatoDeReconocimiento","no hay nada");
+        String formasDeI=preferencias.getString("formasDeInteraccion","no hay nada");
+        boolean cRazasyPelajes=preferencias.getBoolean("checkRazasyPelajes",false);
+        boolean cCruza=preferencias.getBoolean("checkCruza",false);
         String nivel=preferencias.getString("nivel","noy hay nada");
-        ImageButton cab1 = (ImageButton) findViewById(R.id.caballo1);
-        ImageButton cab2 = (ImageButton) findViewById(R.id.caballo2);
-        ImageButton cab3 = (ImageButton) findViewById(R.id.caballo3);
-        ImageButton cab4 = (ImageButton) findViewById(R.id.caballo4);
+        String audio=preferencias.getString("audio","no hay nada");
+        Button op1= (Button) findViewById(R.id.opcion1);
+        Button op2= (Button) findViewById(R.id.opcion2);
+        Button op3= (Button) findViewById(R.id.opcion3);
+        Button op4= (Button) findViewById(R.id.opcion4);
         if (nivel=="1"){
-            cab1.setVisibility(View.INVISIBLE);
-            cab4.setVisibility(View.INVISIBLE);
+            op1.setVisibility(View.INVISIBLE);
+            op4.setVisibility(View.INVISIBLE);
         }
         ImageButton volver= (ImageButton)findViewById(R.id.volver);
         volver.setOnClickListener(new View.OnClickListener() {
@@ -36,9 +41,8 @@ public class JugarCruza extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        cab1.setOnClickListener(new View.OnClickListener() {
+        op1.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.resopla);
-
             @Override
             public void onClick(View view) {
                 mp.start();
@@ -53,7 +57,8 @@ public class JugarCruza extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        cab2.setOnClickListener(new View.OnClickListener() {
+
+        op2.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.relincho1);
             @Override
             public void onClick(View view) {
@@ -67,7 +72,8 @@ public class JugarCruza extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        cab3.setOnClickListener(new View.OnClickListener() {
+
+        op3.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.resopla);
             @Override
             public void onClick(View view) {
@@ -83,7 +89,9 @@ public class JugarCruza extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        cab4.setOnClickListener(new View.OnClickListener() {
+
+
+        op4.setOnClickListener(new View.OnClickListener() {
             MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.resopla);
             @Override
             public void onClick(View view) {
@@ -99,5 +107,6 @@ public class JugarCruza extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 }
