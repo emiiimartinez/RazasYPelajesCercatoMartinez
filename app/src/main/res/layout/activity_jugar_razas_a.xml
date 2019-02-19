@@ -10,8 +10,8 @@
         android:id="@+id/opcion1"
         android:layout_width="wrap_content"
         android:layout_height="52dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="100dp"
         android:text="Button"
@@ -44,25 +44,25 @@
         android:id="@+id/opcion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="@+id/opcion1"
         app:layout_constraintStart_toEndOf="@+id/opcion1"
         app:layout_constraintTop_toTopOf="@+id/opcion1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/opcion3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="@+id/opcion2"
         app:layout_constraintStart_toEndOf="@+id/opcion2"
         app:layout_constraintTop_toTopOf="@+id/opcion2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/opcion4"

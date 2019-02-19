@@ -1,15 +1,15 @@
 package com.trabajofinal.razasypelajescercatomartinez;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.widget.RadioButton;
 import android.widget.Switch;
+import android.widget.CheckBox;
 
 public class Configuracion extends AppCompatActivity {
 
@@ -17,13 +17,12 @@ public class Configuracion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
-
         this.cargarDatos();
         Button aceptar= (Button)findViewById(R.id.aceptar);
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences preferencias2 =getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+                SharedPreferences preferencias2 =getSharedPreferences("preferencias",Context.MODE_PRIVATE);
                 String formatoDeReconocimiento="";
                 String formasDeInteraccion="";
                 boolean cRazasyPelajes;
@@ -32,6 +31,7 @@ public class Configuracion extends AppCompatActivity {
                 String audio="";
                 RadioButton lista=(RadioButton) findViewById(R.id.lista);
                 RadioButton grilla=(RadioButton) findViewById(R.id.grilla);
+                RadioButton iC=(RadioButton) findViewById(R.id.imagenimagen);
                 RadioButton iA=(RadioButton) findViewById(R.id.imagenpalabra);
                 RadioButton iB=(RadioButton) findViewById(R.id.palabraimagen);
                 CheckBox checkRazasyPelajes = (CheckBox) findViewById(R.id.razasypelajes);
@@ -49,6 +49,9 @@ public class Configuracion extends AppCompatActivity {
                 }
                 if (iB.isChecked()){
                     formasDeInteraccion="B";
+                }
+                if (iC.isChecked()){
+                    formasDeInteraccion="C";
                 }
                 if (checkRazasyPelajes.isChecked()){
                     cRazasyPelajes=true;
@@ -93,6 +96,7 @@ public class Configuracion extends AppCompatActivity {
         RadioButton grilla=(RadioButton) findViewById(R.id.grilla);
         RadioButton iA= (RadioButton) findViewById(R.id.imagenpalabra);
         RadioButton iB= (RadioButton) findViewById(R.id.palabraimagen);
+        RadioButton iC= (RadioButton) findViewById(R.id.imagenimagen);
         CheckBox checkRazasyPelajes = (CheckBox) findViewById(R.id.razasypelajes);
         CheckBox checkCruza =(CheckBox) findViewById(R.id.cruzas);
         Switch sNivel=(Switch) findViewById(R.id.nivel);
@@ -104,7 +108,7 @@ public class Configuracion extends AppCompatActivity {
         boolean cCruza=preferencias.getBoolean("checkCruza",false);
         String nivel=preferencias.getString("nivel","noy hay nada");
         String audio=preferencias.getString("audio","no hay nada");
-        if (formatoR == "grilla"){
+        if (formatoR.equals("grilla")){
             grilla.setChecked(true);
         }
         else {
@@ -116,31 +120,29 @@ public class Configuracion extends AppCompatActivity {
         else {
             checkRazasyPelajes.setChecked(true);
         }
-        if (cRazasyPelajes){
-            checkCruza.setChecked(true);
+        if (formasDeI.equals("C")){
+            iC.setChecked(true);
         }
         else {
-            checkRazasyPelajes.setChecked(true);
+            if (formasDeI.equals("B")){
+                iB.setChecked(true);
+            }
+            else {
+                iA.setChecked(true);
+            }
         }
-        if (formasDeI == "B"){
-            iB.setChecked(true);
-        }
-        else {
-            iA.setChecked(true);
-        }
-        if (nivel=="2"){
+        if (nivel.equals("2")){
             sNivel.setChecked(true);
         }
         else{
             sNivel.setChecked(false);
         }
-        if (audio=="femenino"){
+        if (audio.equals("femenino")){
             sAudio.setChecked(true);
         }
         else{
             sAudio.setChecked(false);
         }
     }
-    public void onRadioButtonClicked(View view) {
-    }
+
 }

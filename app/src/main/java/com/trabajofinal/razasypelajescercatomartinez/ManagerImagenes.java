@@ -26,7 +26,7 @@ public class ManagerImagenes {
         }*/
         Drawable[] drawables = new Drawable[5];
         for (int j = 1; j < 5; j++) {
-            drawables[j] = context.getResources().getDrawable(context.getResources().getIdentifier("caballo"+j, "drawable",null));
+            drawables[j] = context.getResources().getDrawable(context.getResources().getIdentifier("caballo"+j, "drawable", context.getPackageName()));
         }
         return drawables;
     }

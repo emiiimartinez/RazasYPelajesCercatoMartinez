@@ -7,44 +7,6 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/jugarr"
-        android:layout_width="91dp"
-        android:layout_height="56dp"
-        android:layout_alignBaseline="@+id/reconocimiento"
-        android:layout_alignBottom="@+id/reconocimiento"
-        android:layout_gravity="end"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="jugarrazas"
-        android:text="Jugar Razas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.251" />
-
-    <Button
-        android:id="@+id/jugarc"
-        android:layout_width="82dp"
-        android:layout_height="64dp"
-        android:layout_alignBaseline="@+id/jugarr"
-        android:layout_alignBottom="@+id/jugarr"
-        android:layout_gravity="end"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="jugar cruzas"
-        android:text="Jugar cruzas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.751"
-        app:layout_constraintStart_toEndOf="@+id/jugarr"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.313" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="434dp"

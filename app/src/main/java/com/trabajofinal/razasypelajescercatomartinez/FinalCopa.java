@@ -2,8 +2,8 @@ package com.trabajofinal.razasypelajescercatomartinez;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -17,7 +17,7 @@ public class FinalCopa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_copa);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ImageButton volver= (ImageButton)findViewById(R.id.volver);
@@ -30,7 +30,7 @@ public class FinalCopa extends AppCompatActivity {
         });
 
         ImageView trophy = (ImageView) findViewById(R.id.copa);
-        trophy.setBackgroundResource(R.drawable.copaAnimation);
+      //  trophy.setBackgroundResource(R.drawable.copaanimation);
         AnimationDrawable gyroAnimation = (AnimationDrawable) trophy.getBackground();
 
         gyroAnimation.start();

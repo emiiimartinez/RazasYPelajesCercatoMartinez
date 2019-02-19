@@ -15,67 +15,88 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SharedPreferences preferencias =getSharedPreferences("preferencias", Context.MODE_PRIVATE);
-        String formatoR=preferencias.getString("formatoDeReconocimiento","no hay nada");
-        String formasDeI=preferencias.getString("formasDeInteraccion","no hay nada");
-        boolean cRazasyPelajes=preferencias.getBoolean("checkRazasyPelajes",false);
-        boolean cCruza=preferencias.getBoolean("checkCruza",false);
-        String nivel=preferencias.getString("nivel","noy hay nada");
-        String audio=preferencias.getString("audio","no hay nada");
-
-        if (formasDeI == "A"){
-//jugar razas A
-            Button jugarr = findViewById(R.id.jugarr);
-            jugarr.setOnClickListener(new View.OnClickListener() {
+        SharedPreferences preferencias = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+        final String formatoR = preferencias.getString("formatoDeReconocimiento", "lista");
+        final String formasDeI = preferencias.getString("formasDeInteraccion", "A");
+        SharedPreferences.Editor editor = preferencias.edit();
+        editor.putInt("countRondas", 1);
+        editor.putInt("countAciertos", 0);
+        editor.commit();
+        if (formatoR.equals("lista")) {
+            //reconocimiento
+            ImageButton rec = findViewById(R.id.reconocimiento);
+            rec.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent in= new Intent(getApplicationContext(),JugarRazasA.class);
-                    startActivity(in);            }
+                    Intent i = new Intent(getApplicationContext(), ReconocimientoLista.class);
+                    startActivity(i);
+                }
             });
-        }
-        else {
-//jugar razas B
-            Button jugarr = findViewById(R.id.jugarr);
-            jugarr.setOnClickListener(new View.OnClickListener() {
+        } else {
+            //reconocimiento
+            ImageButton rec = findViewById(R.id.reconocimiento);
+            rec.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent in= new Intent(getApplicationContext(),JugarRazasB.class);
-                    startActivity(in);            }
+                    Intent i = new Intent(getApplicationContext(), ReconocimientoGrilla.class);
+                    startActivity(i);
+                }
             });
         }
 
-//jugar cruzas
-        Button jugarc = findViewById(R.id.jugarc);
-        jugarc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(),JugarCruza.class);
-                startActivity(i);            }
-        });
-//reconocimiento
-       /* ImageButton rec = findViewById(R.id.reconocimiento);
-        conf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(),Configuracion.class);
-                startActivity(i);            }
-        });*/
 //Configuracion
         ImageButton conf = findViewById(R.id.configuracion);
         conf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(),Configuracion.class);
-                startActivity(i);            }
+                Intent i = new Intent(getApplicationContext(), Configuracion.class);
+                startActivity(i);
+            }
         });
 //about
         ImageButton about = findViewById(R.id.about);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(),About.class);
-                startActivity(i);            }
+                Intent i = new Intent(getApplicationContext(), About.class);
+                startActivity(i);
+            }
         });
+
+        //jugar
+        ImageButton jugar = findViewById(R.id.jugar);
+        if (formasDeI.equals("A")) {
+//jugar razas A
+            jugar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent in = new Intent(getApplicationContext(), JugarRazasA.class);
+                    startActivity(in);
+                }
+            });
+        } else {
+            if (formasDeI.equals("B")) {
+
+//jugar razas B
+                jugar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent in = new Intent(getApplicationContext(), JugarRazasB.class);
+                        startActivity(in);
+                    }
+                });
+            } else {
+
+                //jugar cruzas
+                jugar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(getApplicationContext(), JugarCruza.class);
+                        startActivity(i);
+                    }
+                });
+            }
+        }
 
         //FragmentManager FM = getFragmentManager();
         //FragmentTransaction FT = FM.beginTransaction();
