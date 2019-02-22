@@ -9,14 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JugarRazasyPelajesB"></activity>
+        <activity android:name=".RecLista"></activity>
+        <activity android:name=".RecGrilla" />
+        <activity android:name=".JugarRazasyPelajesB" />
         <activity android:name=".JugarRazasYPelajesA" />
         <activity android:name=".JugarRazasA" />
         <activity android:name=".JugarRazasB" />
-        <activity
-            android:name=".ReconocimientoGrilla"
-            android:label="@string/title_activity_reconocimiento_grilla"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ReconocimientoLista"
             android:label="@string/title_activity_reconocimiento_lista"

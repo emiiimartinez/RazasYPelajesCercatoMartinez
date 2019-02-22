@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             rec.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(getApplicationContext(), ReconocimientoGrilla.class);
+                    Intent i = new Intent(getApplicationContext(), RecGrilla.class);
                     startActivity(i);
                 }
             });

@@ -1,0 +1,34 @@
+[
+    {
+      "for":"info",
+      "text":"TEXT INFO ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sitLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit  amet, consectetur adipiscing elit. Donec nec nisl nec lorem  ultricies euismod. Sed eu velit pellentesque, vehicula lectus sed, eleifend nibh. Vivamus vitae ullamcorper erat. Aenean tempor diam eget turpis tincidunt, ac molestie sapien elementum. Vestibulum fringilla elit quis rutrum scelerisque. Sed lacinia urna ut est posuere, non maximus lacus venenatis. Mauris ac massa in nisi aliquet facilisis. Vestibulum sit amet iaculis neque."
+    },
+    {
+      "for":"spc zaino colorado",
+      "text":"RAZA: SANGRE PURO DE CARRERA. Raza de Caballos con orígen el siglo XVIII en Inglaterra cuando yeguas madres inglesas fueron cruzadas con sementales árabes importados para crear corredores de distancia. Los pura sangre se destacan como caballos de carrera pero también se utilizan como caballos de equitación y otros entrenamientos ecuestres combinados, debido a su gran  condición atlética. El color de capa más común es el castaño. PELAJE: ZAINO COLORADO. La capa tiene un color fundamentalmente marrón, variables de un rojo al negro."
+    },
+    {
+      "for":"mestizo cruza árabe alazán ruano",
+      "text":"RAZA: MESTIZO CRUZA ÁRABE. Resultante de un progenitor MESTIZO y uno ÁRABE. Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. La raza Arabe se destaca por tener una cabeza característica y la cola siempre en alto. El caballo árabe es una de las razas de caballos mejor reconocidas en el mundo. Su reputación denota su inteligencia, carácter fuerte y resistencia sobresaliente. Tienen menos huesos ya que tienen una costilla, un hueso lumbar y dos vértebras menos que los demás caballos. PELAJE: ALAZÁN RUANO. Capa color rojizo de distintos tonos que presenta matices yendo del claro al oscuro. Se caracteriza por la crin y cola blancas."
+    },
+    {
+      "for":"mestizo tordillo canela",
+      "text":"RAZA: MESTIZO. Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. PELAJE: TORDILLO CANELA. Se caracteriza por poseer pelos blancos y negros entremezclados, lo cual le da a la capa un aspecto grisáceo que puede variar del gris oscuro al casi blanco."
+    },
+    {
+      "for":"mestizo tobiano",
+      "text":"RAZA: MESTIZO. Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. PELAJE: TOBIANO. Capa caracterizada por manchas de bordes definidos blancas –grandes o pequeñas- que, generalmente, se inician sobre la parte dorsal."
+    },
+    {
+      "for":"criollo picaso",
+      "text":"RAZA: CRIOLLO. Raza de Caballos propio de Latinoamérica. Son animales de cuerpo robusto y musculoso, con unas extremidades fuertes y una abundante melena; de porte equilibrado, armónico y con el centro de gravedad bajo. De carácter autónomo y perseverante. PELAJE: PICASO. Se caracteriza por capa oscura con frente y extremidades blancas."
+    },
+    {
+      "for":"criollo overo azulejo",
+      "text":"RAZA: CRIOLLO. Raza de Caballos propio de Latinoamérica. Son animales de cuerpo robusto y musculoso, con unas extremidades fuertes y una abundante melena; de porte equilibrado, armónico y con el centro de gravedad bajo. De carácter autónomo y perseverante. PELAJE: OVERO AZULEJO. Capa pigmentada con manchas blancas características por sus bordes irregulares e indefinidos. Se da tanto en una capa pigmentada con manchas blancas o al revés. La parte inferior del cuerpo suele tener más presencia de blanco que la parte superior."
+    },
+    {
+      "for":"cuarto de milla bayo",
+      "text":"RAZA: CUARTO DE MILLA, también conocida como Quarter Horses. Extremadamente sensible y tratable. Tiene la velocidad de los caballos de sangre caliente de sus ancestros y la estabilidad de los Caballos de sangre fría. Tiene un alto grado de inteligencia; es muy fácil de entrenar y de conducir, obediente. Su conformación a la vez elegante y fuerte, la armonía de sus andares y la docilidad propias del Cuarto de Milla hace que se lo considere el caballo más versátil del mundo. PELAJE: BAYO. El color de la capa abarca una amplia gama cromática que puede ir del amarillo muy claro casi blanco hasta el marrón claro anaranjado. Este pelaje suele presentar particularidades blancas o cabos negros."
+    },
+]
