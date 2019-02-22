@@ -1,6 +1,55 @@
 <resources>
-    <string name="app_name">RazasYPelajesCercatoMartinez</string>
+
     <string name="title_activity_final_copa">FinalCopa</string>
     <string name="title_activity_reconocimiento_lista">ReconocimientoLista</string>
     <string name="title_activity_reconocimiento_grilla">ReconocimientoGrilla</string>
+    <!-- app name -->
+    <string name="app_name">RazasYPelajesCercatoMartinez</string>
+
+    <!-- strings in game activity layout -->
+    <string name="horse_to_find">Caballo a encontrar</string>
+
+    <!-- enable games prefs -->
+    <string name="RPJenabled_pref_key">RPJenabled</string>
+    <string name="enable_games_preferences">enable_games_preferences</string>
+    <bool name="pref_default_RPJenabled">false</bool>
+
+    <!-- Strings Configuracion -->
+    <string name="config_preferences">configuracion</string>
+    <string name="listRadBtnTxt">Lista</string>
+    <string name="gridRadBtnTxt">Grilla</string>
+    <string name="filtroTxtView">Filtrar:</string>
+    <string name="recorypRadBtn">Razas y Pelajes</string>
+    <string name="recorCruzaRadBtn">Cruzas</string>
+    <string name="accept">Aceptar</string>
+    <string name="level1">Nivel1</string>
+    <string name="level2">Nivel2</string>
+    <string name="male_audio">Masculino</string>
+    <string name="female_audio">Femenino</string>
+    <string name="fem_audio_pref_key">fem_audio</string>
+    <string name="level2_pref_key">level2</string>
+    <string name="reco_view_mode_pref_key">reco_view_mode</string>
+    <string name="minijuego_pref_key">minijuego</string>
+    <string name="interaction_pref_key">interaction</string>
+    <string name="audioTxt">Audio:</string>
+    <string name="levelTxt"> Nivel:</string>
+    <string name="RPRadBtnTxt">Razas y Pelajes</string>
+    <string name="RPJRadBtnTxt">Razas y Pelajes Juntas</string>
+    <string name="InteracARadBtnTxt">Imagen - Palabra</string>
+    <string name="InteracBRadBtnTxt">Palabra - Imagen</string>
+    <string name="InteracCRadBtnTxt">Imagen - Imagen</string>
+    <string name="recoTxt">Modo Reconocimiento:</string>
+    <string name="minijuegoTxt">Formas de Interaccion:</string>
+    <bool name="pref_default_nivel">false</bool>
+    <bool name="pref_default_audio">true</bool>
+
+    <!-- Strings Descriptores -->
+    <string name="unlpLogoDesc">logo UNLP</string>
+    <string name="appLogoDesc">logo app</string>
+    <string name="facuLogoDesc">logo facultad</string>
+    <string name="cedicaLogoDesc">logo cedica</string>
+    <string name="aboutDesc">informacion</string>
+    <string name="juegoDesc">jugar</string>
+
 </resources>
+
