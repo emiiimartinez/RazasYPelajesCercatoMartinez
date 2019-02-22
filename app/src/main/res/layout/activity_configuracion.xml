@@ -249,7 +249,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Switch
-                        android:id="@+id/audioSwitch"
+                        android:id="@+id/levelSwitch"
                         android:layout_width="155dp"
                         android:layout_height="60dp"
                         android:layout_marginStart="192dp"
@@ -274,11 +274,11 @@
                         android:text="@string/level2"
                         android:textColor="@android:color/background_dark"
                         android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/audioSwitch"
+                        app:layout_constraintBottom_toBottomOf="@+id/levelSwitch"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.01"
-                        app:layout_constraintStart_toEndOf="@+id/audioSwitch"
-                        app:layout_constraintTop_toTopOf="@+id/audioSwitch"
+                        app:layout_constraintStart_toEndOf="@+id/levelSwitch"
+                        app:layout_constraintTop_toTopOf="@+id/levelSwitch"
                         app:layout_constraintVertical_bias="1.0" />
 
                 </android.support.constraint.ConstraintLayout>

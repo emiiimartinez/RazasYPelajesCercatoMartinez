@@ -29,7 +29,7 @@
     <string name="fem_audio_pref_key">fem_audio</string>
     <string name="level2_pref_key">level2</string>
     <string name="reco_view_mode_pref_key">reco_view_mode</string>
-    <string name="minijuego_pref_key">minijuego</string>
+    <string name="reco_filter_key">reco_filter</string>
     <string name="interaction_pref_key">interaction</string>
     <string name="audioTxt">Audio:</string>
     <string name="levelTxt"> Nivel:</string>
