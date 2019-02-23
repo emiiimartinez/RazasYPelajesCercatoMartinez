@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JugarActivity"></activity>
-        <activity android:name=".About" />
-        <activity android:name=".Configuracion" />
+        <activity android:name=".ReconocimientoActivity"></activity>
+        <activity android:name=".JugarActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ConfiguracionActivity" />
         <activity android:name=".RecLista" />
         <activity android:name=".RecGrilla" />
         <activity android:name=".JugarRazasyPelajesB" />

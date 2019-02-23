@@ -10,7 +10,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 
-public class Configuracion extends AppCompatActivity {
+public class ConfiguracionActivity extends AppCompatActivity {
     Switch levelSwitch;
     Switch audioSwitch;
     RadioGroup interactionRadioGroup;

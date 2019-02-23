@@ -1,4 +1,4 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils;
 
-public class textos {
+public class Algo {
 }

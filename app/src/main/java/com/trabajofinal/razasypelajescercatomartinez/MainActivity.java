@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,15 +33,34 @@ public class MainActivity extends AppCompatActivity {
         initLayout();
     }
     private void initLayout() {
-        //findViewById(R.id.reconocimientoButton).setBackgroundResource(R.drawable.ic_reconocimiento_regular);
-        //findViewById(R.id.playButton).setBackgroundResource(R.drawable.ic_jugar_regular);
-        //findViewById(R.id.infoButton).setBackgroundResource(R.drawable.ic_info_regular);
+        findViewById(R.id.reconocimientoButton).setBackgroundResource(R.drawable.ic_reconocimiento_regular);
+        findViewById(R.id.jugarButton).setBackgroundResource(R.drawable.ic_jugar_regular);
+        findViewById(R.id.aboutButton).setBackgroundResource(R.drawable.ic_info_regular);
         findViewById(R.id.configButton).setBackgroundResource(R.drawable.ic_config_regular);
     }
-    /** Called when the user taps Settings Button */
+    /** Accion Jugar Button */
+    public void jugar(View view) {
+        findViewById(R.id.jugarButton).setBackgroundResource(R.drawable.ic_jugar_click);
+        Intent intent = new Intent(this, JugarActivity.class);
+        startActivity(intent);
+    }
+
+    /** Accion Reconocimiento Button */
+    public void reconocimiento(View view) {
+        findViewById(R.id.reconocimientoButton).setBackgroundResource(R.drawable.ic_reconocimiento_click);
+        Intent intent = new Intent(this, ReconocimientoActivity.class);
+        startActivity(intent);
+    }
+    /** Accion Configuracion Button */
     public void configuracion(View view) {
         findViewById(R.id.configButton).setBackgroundResource(R.drawable.ic_config_click);
-        Intent intent = new Intent(this, Configuracion.class);
+        Intent intent = new Intent(this, ConfiguracionActivity.class);
+        startActivity(intent);
+    }
+    /** Accion Info Button */
+    public void about(View view) {
+        findViewById(R.id.aboutButton).setBackgroundResource(R.drawable.ic_info_click);
+        Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
 

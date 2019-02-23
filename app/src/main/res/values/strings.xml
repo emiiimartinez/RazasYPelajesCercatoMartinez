@@ -1,20 +1,12 @@
 <resources>
-
-    <string name="title_activity_final_copa">FinalCopa</string>
-    <string name="title_activity_reconocimiento_lista">ReconocimientoLista</string>
-    <string name="title_activity_reconocimiento_grilla">ReconocimientoGrilla</string>
     <!-- app name -->
     <string name="app_name">RazasYPelajesCercatoMartinez</string>
 
-    <!-- strings in game activity layout -->
+    <!-- ayuda juegar -->
+    <string name="juegoDesc">jugar</string>
     <string name="horse_to_find">Caballo a encontrar</string>
 
-    <!-- enable games prefs -->
-    <string name="RPJenabled_pref_key">RPJenabled</string>
-    <string name="enable_games_preferences">enable_games_preferences</string>
-    <bool name="pref_default_RPJenabled">false</bool>
-
-    <!-- Strings Configuracion -->
+    <!-- Strings ConfiguracionActivity -->
     <string name="config_preferences">configuracion</string>
     <string name="listRadBtnTxt">Lista</string>
     <string name="gridRadBtnTxt">Grilla</string>
@@ -34,7 +26,6 @@
     <string name="audioTxt">Audio:</string>
     <string name="levelTxt"> Nivel:</string>
     <string name="RPRadBtnTxt">Razas y Pelajes</string>
-    <string name="RPJRadBtnTxt">Razas y Pelajes Juntas</string>
     <string name="InteracARadBtnTxt">Imagen - Palabra</string>
     <string name="InteracBRadBtnTxt">Palabra - Imagen</string>
     <string name="InteracCRadBtnTxt">Imagen - Imagen</string>
@@ -43,13 +34,25 @@
     <bool name="pref_default_nivel">false</bool>
     <bool name="pref_default_audio">true</bool>
 
-    <!-- Strings Descriptores -->
+    <!-- Strings AboutActivity -->
+    <string name="aboutDesc">informacion</string>
+    <string name="aboutJugar"> Juego de reconocimiento de razas, pelajes y cruzas de caballos.</string>
+    <string name="aboutGrupo">Desarrollado por el grupo Cercato-Martinez</string>
+    <string name="aboutIntegrantes">Integrantes:</string>
+    <string name="aboutAyudante">Ayudante:</string>
+    <string name="aboutNameAyudante">Juan Pablo</string>
+    <string name="aboutNameIntegrante1">Pilar Cercato</string>
+    <string name="aboutNameIntegrante2">Maria Emilia Martinez</string>
+    <string name="aboutCedica">CEDICA Centro de Equitación para Personas con Discapacidad y Carenciados.</string>
+
+    <!-- Strings Otros-->
+    <string name="volver">Volver</string>
     <string name="unlpLogoDesc">logo UNLP</string>
     <string name="appLogoDesc">logo app</string>
     <string name="facuLogoDesc">logo facultad</string>
     <string name="cedicaLogoDesc">logo cedica</string>
-    <string name="aboutDesc">informacion</string>
-    <string name="juegoDesc">jugar</string>
-
+    <string name="title_activity_final_copa">FinalCopa</string>
+    <string name="title_activity_reconocimiento_lista">ReconocimientoLista</string>
+    <string name="title_activity_reconocimiento_grilla">ReconocimientoGrilla</string>
 </resources>
 

@@ -250,15 +250,15 @@
 
                     <Switch
                         android:id="@+id/levelSwitch"
-                        android:layout_width="155dp"
+                        android:layout_width="200dp"
                         android:layout_height="60dp"
                         android:layout_marginStart="192dp"
                         android:layout_marginLeft="192dp"
                         android:layout_marginTop="64dp"
                         android:layout_marginBottom="30dp"
+                        android:gravity="center"
                         android:switchMinWidth="100dp"
                         android:text="@string/level1"
-
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -318,7 +318,7 @@
                         android:layout_marginStart="176dp"
                         android:layout_marginLeft="176dp"
                         android:layout_marginTop="64dp"
-
+                        android:gravity="center"
                         android:switchMinWidth="100dp"
                         android:text="@string/male_audio"
                         android:textSize="18sp"

@@ -1,6 +1,6 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.Caballos;
 
-public class Caballo {
+public class CaballoModel {
     private String raza, pelaje;
     private Integer imagen;
     private Integer[] audio;
