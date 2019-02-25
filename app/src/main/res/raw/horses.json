@@ -1,30 +1,140 @@
 [
   {
-    "type":"criollo",
-    "hairType":"overo azulejo"
+    "name": "Amapola",
+    "breed": "Petiso Argentino",
+    "fur": "Rosillo",
+    "photo": "horse_01"
   },
   {
-    "type":"criollo",
-    "hairType":"picaso"
+    "name": "Ambar",
+    "breed": "Mestizo Cruza Arabe",
+    "fur": "Alazan Tostado",
+    "photo": "horse_02"
   },
   {
-    "type":"cuarto de milla",
-    "hairType":"bayo"
+    "name": "Angola",
+    "breed": "Spc",
+    "fur": "Zainocolorado",
+    "photo": "horse_03"
   },
   {
-    "type":"mestizo cruza árabe",
-    "hairType":"alazán ruano"
+    "name": "Antu",
+    "breed": "Mestizo",
+    "fur": "Overo Zaino",
+    "photo": "horse_04"
   },
   {
-    "type":"mestizo",
-    "hairType":"tobiano"
+    "name": "Bionda",
+    "breed": "Mestizo",
+    "fur": "Alazan Ruano",
+    "photo": "horse_05"
   },
   {
-    "type":"mestizo",
-    "hairType":"tordillo canela"
+    "name": "Blanco",
+    "breed": "Mestizo",
+    "fur": "Blanco",
+    "photo": "horse_06"
   },
   {
-    "type":"spc",
-    "hairType":"zaino colorado"
+    "name": "Bonita",
+    "breed": "Mestizo Qh Con Criollo",
+    "fur": "Overo Azulejo",
+    "photo": "horse_07"
+  },
+  {
+    "name": "Cacique",
+    "breed": "Mestizo",
+    "fur": "Alazan",
+    "photo": "horse_08"
+  },
+  {
+    "name": "Candelaria",
+    "breed": "Mestizo",
+    "fur": "Tobiano",
+    "photo": "horse_09"
+  },
+  {
+    "name": "Ciro",
+    "breed": "Mestizo",
+    "fur": "Tordillo Canela",
+    "photo": "horse_10"
+  },
+  {
+    "name": "Felipe",
+    "breed": "Mestizo",
+    "fur": "Zaino",
+    "photo": "horse_11"
+  },
+  {
+    "name": "Hualfín",
+    "breed": "Criollo",
+    "fur": "Horsepicaso",
+    "photo": "horse_12"
+  },
+  {
+    "name": "Juana",
+    "breed": "Cuarto De Milla",
+    "fur": "Bayo",
+    "photo": "horse_13"
+  },
+  {
+    "name": "Mora",
+    "breed": "Petiso Argentino",
+    "fur": "Tordillo Moro",
+    "photo": "horse_14"
+  },
+  {
+    "name": "Muñeco",
+    "breed": "Mestizo",
+    "fur": "Overo Rosado",
+    "photo": "horse_15"
+  },
+  {
+    "name": "Nala",
+    "breed": "Mestizo",
+    "fur": "Moro",
+    "photo": "horse_16"
+  },
+  {
+    "name": "Pamperito",
+    "breed": "Petiso Argentino",
+    "fur": "Zaino",
+    "photo": "horse_17"
+  },
+  {
+    "name": "Pintada",
+    "breed": "Mestizo",
+    "fur": "Alazan Pintado",
+    "photo": "horse_18"
+  },
+  {
+    "name": "Pochito",
+    "breed": "Mestizo",
+    "fur": "Zaino",
+    "photo": "horse_19"
+  },
+  {
+    "name": "Primavera",
+    "breed": "Silla Argentino",
+    "fur": "Alazan",
+    "photo": "horse_20"
+  },
+  {
+    "name": "Tigre",
+    "breed": "Criollo",
+    "fur": "Bayo Gateado",
+    "photo": "horse_21"
+  },
+  {
+    "name": "Tupac",
+    "breed": "Mestizo",
+    "fur": "Zaino Oscuro",
+    "photo": "horse_22"
+  },
+  {
+    "name": "Zorzal",
+    "breed": "Mestizo",
+    "fur": "Tordillo",
+    "photo": "horse_23"
   }
 ]

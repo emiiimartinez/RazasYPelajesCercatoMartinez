@@ -1,0 +1,32 @@
+package com.trabajofinal.razasypelajescercatomartinez.utils.caballos;
+
+import com.trabajofinal.razasypelajescercatomartinez.R;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
+public enum CaballosImagenProvider {
+    INSTANCE;
+
+    private final Map imgsMap;
+
+    CaballosImagenProvider() {
+        this.imgsMap = new HashMap();
+        imgsMap.put("spc zaino colorado", R.drawable.horse_spc__zaino_colorado);
+        imgsMap.put("mestizo cruza árabe alazán ruano", R.drawable.horse_mestizo_arabe__alazan_ruano);
+        imgsMap.put("mestizo tordillo canela", R.drawable.horse_mestizo__tordillo_canela);
+        imgsMap.put("mestizo tobiano", R.drawable.horse_mestizo__tobiano);
+        imgsMap.put("cuarto de milla bayo", R.drawable.horse_cuarto_de_milla__bayo);
+        imgsMap.put("criollo picaso", R.drawable.horse_criollo__picaso);
+        imgsMap.put("criollo overo azulejo", R.drawable.horse_criollo__overo_azulejo);
+    }
+
+    public Integer getImgAt(String key){
+        Integer tmp = (Integer) imgsMap.get(key);
+        if (tmp != null) {
+            return tmp;
+        }
+        return R.drawable.horse_no_image;
+    }
+}
