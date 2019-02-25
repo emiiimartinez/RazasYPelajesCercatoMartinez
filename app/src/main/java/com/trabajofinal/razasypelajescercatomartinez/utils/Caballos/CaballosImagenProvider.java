@@ -1,4 +1,4 @@
-package com.trabajofinal.razasypelajescercatomartinez.utils.caballos;
+package com.trabajofinal.razasypelajescercatomartinez.utils.Caballos;
 
 import com.trabajofinal.razasypelajescercatomartinez.R;
 
