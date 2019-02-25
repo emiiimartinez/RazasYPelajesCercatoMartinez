@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecLista">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/horse_criollo__overo_azulejo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteY="90dp" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto1"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/Texto12"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.503"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/Texto1" />
+
+                            <Button
+                                android:id="@+id/audio1"
+                                android:layout_width="113dp"
+                                android:layout_height="102dp"
+                                android:background="@drawable/ic_audio_regular"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteX="77dp"
+                                tools:layout_editor_absoluteY="158dp" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto13"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Texto largo"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/horse_criollo__overo_azulejo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteY="90dp" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto2"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/Texto22"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.504"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/Texto2" />
+
+                            <Button
+                                android:id="@+id/audio2"
+                                android:layout_width="113dp"
+                                android:layout_height="102dp"
+                                android:background="@drawable/ic_audio_regular"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteX="77dp"
+                                tools:layout_editor_absoluteY="158dp" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto23"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Texto largo"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/horse_criollo__overo_azulejo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteY="90dp" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto3"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/Texto32"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.504"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/Texto3" />
+
+                            <Button
+                                android:id="@+id/audio3"
+                                android:layout_width="113dp"
+                                android:layout_height="102dp"
+                                android:background="@drawable/ic_audio_regular"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteX="75dp"
+                                tools:layout_editor_absoluteY="158dp" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto33"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Texto largo"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/horse_criollo__overo_azulejo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteY="90dp" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto4"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/Texto42"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.504"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/Texto4" />
+
+                            <Button
+                                android:id="@+id/audio4"
+                                android:layout_width="113dp"
+                                android:layout_height="102dp"
+                                android:background="@drawable/ic_audio_regular"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteX="77dp"
+                                tools:layout_editor_absoluteY="158dp" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto43"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Texto largo"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/horse_criollo__overo_azulejo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteY="90dp" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto5"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/Texto52"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Reemplazar"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.504"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/Texto5" />
+
+                            <Button
+                                android:id="@+id/audio5"
+                                android:layout_width="113dp"
+                                android:layout_height="102dp"
+                                android:background="@drawable/ic_audio_regular"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteX="75dp"
+                                tools:layout_editor_absoluteY="166dp" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/Texto53"
+                                style="@android:style/TextAppearance.DeviceDefault.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:text="Texto largo"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.507"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/volver"
+                                android:layout_width="88dp"
+                                android:layout_height="89dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/ic_home_regular"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

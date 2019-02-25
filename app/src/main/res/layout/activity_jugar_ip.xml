@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JugarIP">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                app:srcCompat="@drawable/horse_criollo__overo_azulejo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/Texto1"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="84dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.101"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Texto12"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.227"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto1" />
+
+                    <Button
+                        android:id="@+id/audio1"
+                        android:layout_width="113dp"
+                        android:layout_height="102dp"
+                        android:background="@drawable/ic_audio_regular"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="191dp"
+                        tools:layout_editor_absoluteY="78dp" />
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="56dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto12" />
+
+
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/Texto2"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="84dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Texto22"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto2"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="46dp" />
+                    <Button
+                        android:id="@+id/audio2"
+                        android:layout_width="113dp"
+                        android:layout_height="102dp"
+                        android:background="@drawable/ic_audio_regular"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="191dp"
+                        tools:layout_editor_absoluteY="78dp" />
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="56dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto22" />
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/Texto3"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="84dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.11"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Texto32"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.232"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto3" />
+                    <Button
+                        android:id="@+id/audio3"
+                        android:layout_width="113dp"
+                        android:layout_height="102dp"
+                        android:background="@drawable/ic_audio_regular"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="191dp"
+                        tools:layout_editor_absoluteY="78dp" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="56dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto32" />
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/Texto4"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="84dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.101"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Texto42"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:layout_marginBottom="55dp"
+                        android:text="Reemplazar"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/button4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.227"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto4" />
+
+                    <Button
+                        android:id="@+id/audio4"
+                        android:layout_width="113dp"
+                        android:layout_height="102dp"
+                        android:background="@drawable/ic_audio_regular"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="182dp"
+                        tools:layout_editor_absoluteY="78dp" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="56dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Texto42" />
+
+                    <Button
+                        android:id="@+id/volver"
+                        android:layout_width="88dp"
+                        android:layout_height="89dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/ic_home_regular"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

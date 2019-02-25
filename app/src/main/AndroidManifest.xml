@@ -9,26 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReconocimientoActivity"></activity>
+        <activity android:name=".RecLista"></activity>
+        <activity android:name=".RecGrilla" />
+        <activity android:name=".JugarII" />
+        <activity android:name=".JugarPI" />
+        <activity android:name=".JugarIP" />
+        <activity android:name=".ReconocimientoActivity" />
         <activity android:name=".JugarActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".ConfiguracionActivity" />
-        <activity android:name=".RecLista" />
-        <activity android:name=".RecGrilla" />
-        <activity android:name=".JugarRazasyPelajesB" />
-        <activity android:name=".JugarRazasYPelajesA" />
-        <activity android:name=".JugarRazasA" />
-        <activity android:name=".JugarRazasB" />
-        <activity
-            android:name=".ReconocimientoLista"
-            android:label="@string/title_activity_reconocimiento_lista"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".JugarCruza" />
-
-        <service
-            android:name=".Audio"
-            android:enabled="true"
-            android:exported="true" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -37,10 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FinalCopa"
-            android:label="@string/title_activity_final_copa"
-            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
