@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecLista"></activity>
-        <activity android:name=".RecGrilla" />
-        <activity android:name=".JugarII" />
-        <activity android:name=".JugarPI" />
-        <activity android:name=".JugarIP" />
+        <activity android:name=".utils.reconocimiento.RecLista"></activity>
+        <activity android:name=".utils.reconocimiento.RecGrilla" />
+        <activity android:name=".utils.interacciones.JugarII" />
+        <activity android:name=".utils.interacciones.JugarPI" />
+        <activity android:name=".utils.interacciones.JugarIP" />
         <activity android:name=".ReconocimientoActivity" />
         <activity android:name=".JugarActivity" />
         <activity android:name=".AboutActivity" />

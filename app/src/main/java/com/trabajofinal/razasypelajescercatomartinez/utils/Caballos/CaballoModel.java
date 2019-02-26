@@ -6,21 +6,20 @@ import java.util.Map;
 
 public class CaballoModel {
     private String raza, pelaje;
-    private Integer imagen;
+    private String imagen;
     private Map<String, Integer[]> audio;
 
     public CaballoModel() {
         this.raza = "";
         this.pelaje = "";
-        this.imagen = 0;
+        this.imagen = "";
         this.audio = new HashMap<>();
     }
 
-    public CaballoModel(String raza, String pelaje) {
+    public CaballoModel(String raza, String pelaje, String imagen) {
         this.raza = raza;
         this.pelaje = pelaje;
-        this.imagen = 0;
-        this.audio = new HashMap<>();
+        this.imagen = imagen;
     }
 
     public String getRaza() {
@@ -41,11 +40,11 @@ public class CaballoModel {
         this.pelaje = pelaje;
     }
 
-    public Integer getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(Integer imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

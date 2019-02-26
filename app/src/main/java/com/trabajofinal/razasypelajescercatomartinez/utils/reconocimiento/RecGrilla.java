@@ -1,7 +1,9 @@
-package com.trabajofinal.razasypelajescercatomartinez;
+package com.trabajofinal.razasypelajescercatomartinez.utils.reconocimiento;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.trabajofinal.razasypelajescercatomartinez.R;
 
 public class RecGrilla extends AppCompatActivity {
 

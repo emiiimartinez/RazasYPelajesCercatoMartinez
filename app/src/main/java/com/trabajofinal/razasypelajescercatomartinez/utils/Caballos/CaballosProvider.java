@@ -1,5 +1,7 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.Caballos;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.trabajofinal.razasypelajescercatomartinez.utils.JsonManager;
@@ -16,12 +18,13 @@ import java.util.Map;
 import com.trabajofinal.razasypelajescercatomartinez.R;
 import com.trabajofinal.razasypelajescercatomartinez.utils.audios.AudioProvider;
 
-public class CaballosProvider {
+public class CaballosProvider extends AppCompatActivity {
     private List<CaballoModel> horsesList;
     private AppCompatActivity context;
 
-    public CaballosProvider(AppCompatActivity context) {
-        this.context = context;
+
+    public CaballosProvider(Context applicationContext) {
+        this.context = (AppCompatActivity) applicationContext;
         this.horsesList = new ArrayList();
         String json = JsonManager.INSTANCE.getJSONFromRaw(R.raw.horses, this.context);
         CaballoModel horse;
@@ -31,8 +34,8 @@ public class CaballosProvider {
                 JSONObject horseJSON = horsesJSON.getJSONObject(i);
                 String raza = horseJSON.getString("breed");
                 String pelaje = horseJSON.getString("fur");
-                horse = new CaballoModel(raza, pelaje);
-                Integer image = CaballosImagenProvider.INSTANCE.getImgAt(horse.getName());
+                String imagen = horseJSON.getString("photo");
+                horse = new CaballoModel(raza, pelaje,imagen);
                 Map audio = new HashMap();
                 audio.put("f", new Integer[]{
                         AudioProvider.INSTANCE.getFemSoundAt(raza),
@@ -42,7 +45,6 @@ public class CaballosProvider {
                         AudioProvider.INSTANCE.getMaleSoundAt(raza),
                         AudioProvider.INSTANCE.getMaleSoundAt(pelaje)
                 });
-                horse.setImagen(image);
                 horse.setAudio(audio);
                 horsesList.add(horse);
             }

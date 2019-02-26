@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JugarII">
+    tools:context=".utils.interacciones.JugarII">
 
         <LinearLayout
             android:id="@+id/container"
@@ -29,7 +29,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/image1"
+                        android:id="@+id/caballoAEncontrar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/horse_criollo__overo_azulejo"
@@ -60,7 +60,7 @@
 
 
                         <Button
-                            android:id="@+id/button1"
+                            android:id="@+id/caballoOp1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/horse_criollo__overo_azulejo"
@@ -83,7 +83,7 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/caballoOp2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/horse_criollo__overo_azulejo"
@@ -105,7 +105,7 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button3"
+                            android:id="@+id/caballoOp3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/horse_criollo__overo_azulejo"
@@ -126,7 +126,7 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/caballoOp4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/horse_criollo__overo_azulejo"

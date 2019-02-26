@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JugarPI">
+    tools:context=".utils.interacciones.JugarPI">
 
     <LinearLayout
         android:id="@+id/container"
@@ -29,39 +29,28 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/Texto1"
+                    android:id="@+id/caballoAEncontrar"
                     style="@android:style/TextAppearance.DeviceDefault.Large"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="279dp"
+                    android:layout_height="124dp"
                     android:layout_marginTop="80dp"
-                    android:text="Reemplazar"
+                    android:gravity="center"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/Texto12"
-                    style="@android:style/TextAppearance.DeviceDefault.Large"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:text="Reemplazar"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Texto1" />
-
-                <Button
-                    android:id="@+id/button"
+                <ImageView
+                    android:id="@+id/audioButton"
                     android:layout_width="115dp"
                     android:layout_height="99dp"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginLeft="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:background="@drawable/ic_audio_regular"
-                    app:layout_constraintStart_toEndOf="@+id/Texto1"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="75dp" />
+                    app:layout_constraintBottom_toBottomOf="@+id/caballoAEncontrar"
+                    app:layout_constraintStart_toEndOf="@+id/caballoAEncontrar"
+                    app:layout_constraintTop_toTopOf="@+id/caballoAEncontrar"
+                    tools:ignore="MissingConstraints" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -84,14 +73,20 @@
                     android:layout_height="match_parent">
 
 
-                    <Button
-                        android:id="@+id/button1"
+                    <ImageView
+                        android:id="@+id/caballo1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/horse_criollo__overo_azulejo"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        tools:ignore="MissingConstraints" />
+                        app:layout_constraintTop_toTopOf="parent"/>
 
 
                 </android.support.constraint.ConstraintLayout>
@@ -107,14 +102,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/button2"
+                    <ImageView
+                        android:id="@+id/caballo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/horse_criollo__overo_azulejo"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        tools:ignore="MissingConstraints" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
 
                 </android.support.constraint.ConstraintLayout>
             </LinearLayout>
@@ -129,14 +131,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/button3"
+                    <ImageView
+                        android:id="@+id/caballo3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/horse_criollo__overo_azulejo"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        tools:ignore="MissingConstraints" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </android.support.constraint.ConstraintLayout>
             </LinearLayout>
 
@@ -150,14 +158,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/button4"
+                    <ImageView
+                        android:id="@+id/caballo4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/horse_criollo__overo_azulejo"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        tools:ignore="MissingConstraints" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
                         android:id="@+id/volver"
