@@ -32,7 +32,6 @@
                         android:id="@+id/caballoAEncontrar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/horse_criollo__overo_azulejo"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:ignore="MissingConstraints"
@@ -63,7 +62,6 @@
                             android:id="@+id/caballoOp1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/horse_criollo__overo_azulejo"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints" />
@@ -86,7 +84,6 @@
                             android:id="@+id/caballoOp2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/horse_criollo__overo_azulejo"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints" />
@@ -108,7 +105,6 @@
                             android:id="@+id/caballoOp3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/horse_criollo__overo_azulejo"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints" />
@@ -129,7 +125,6 @@
                             android:id="@+id/caballoOp4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/horse_criollo__overo_azulejo"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints" />

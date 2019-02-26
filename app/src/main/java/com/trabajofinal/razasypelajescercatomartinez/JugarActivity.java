@@ -135,6 +135,10 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.InteracARadBtn);
         return minijuegoPref == R.id.InteracBRadBtn;
     }
+    public Boolean playingCruza(){
+        Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.InteracARadBtn);
+        return minijuegoPref == R.id.InteracCRadBtn;
+    }
 
     private Boolean playingWithBInteraction(){
         Integer interactionPref = getConfigSharedPrefs().getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn);

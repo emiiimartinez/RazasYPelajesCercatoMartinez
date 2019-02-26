@@ -128,7 +128,7 @@ public abstract class InteraccionManager {
             this.context.makeToast("¡Ganaste!");
             // reset
             this.context.resetRondasyAciertos();
-            // if RP
+            // if RP}
             if(!this.context.playingRazasYPelajesJuntos()){
                 // enable RPJ in settings
               //  this.context.enableRPJ();
@@ -137,8 +137,12 @@ public abstract class InteraccionManager {
                 // confetti
                // this.context.startConfettiAnimation();
             }else{
-               // this.context.showTrophy();
-               // this.context.startTrophyAnimation();
+                if(!this.context.playingCruza()){
+                    this.context.showNextLayout();
+                }else {
+                    // this.context.showTrophy();
+                    // this.context.startTrophyAnimation();
+                }
             }
         }else if (this.context.isImpossibleToWin()){
             // inform user

@@ -22,6 +22,7 @@ public class JugarPI extends InteraccionManager {
     private List<ImageView> imageViews;
     private ImageView soundImgView, selectedImageView;
     private Button volver;
+
     public JugarPI(final JugarActivity context, Boolean playingLevel2) {
         super(context, playingLevel2);
 
@@ -124,8 +125,7 @@ public class JugarPI extends InteraccionManager {
     @Override
     public void manageOnClick(View view) {
         if (view == soundImgView){
-            //setImageResource( ((ImageView)this.context.findViewById(R.id.audioButton))
-             //       , R.drawable.ic_audio_click);
+            //setImageResource( ((ImageView)this.context.findViewById(R.id.audioButton)), R.drawable.ic_audio_click);
             playHorseToFindSound();
         }else{
             // se hizo click en una imagen

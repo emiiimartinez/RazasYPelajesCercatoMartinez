@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.trabajofinal.razasypelajescercatomartinez">
 
     <application
@@ -8,12 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".utils.reconocimiento.RecLista"></activity>
         <activity android:name=".utils.reconocimiento.RecGrilla" />
-        <activity android:name=".utils.interacciones.JugarII" />
-        <activity android:name=".utils.interacciones.JugarPI" />
-        <activity android:name=".utils.interacciones.JugarIP" />
         <activity android:name=".ReconocimientoActivity" />
         <activity android:name=".JugarActivity" />
         <activity android:name=".AboutActivity" />
