@@ -53,8 +53,6 @@
                         style="@android:style/TextAppearance.DeviceDefault.Large"
                         android:layout_width="172dp"
                         android:layout_height="240dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="32dp"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -65,10 +63,12 @@
                         android:id="@+id/audio1"
                         android:layout_width="113dp"
                         android:layout_height="102dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintBottom_toBottomOf="@+id/texto1"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/texto1"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="191dp" />
+                        tools:ignore="MissingConstraints" />
 
 
                 </android.support.constraint.ConstraintLayout>
@@ -89,8 +89,6 @@
                         style="@android:style/TextAppearance.DeviceDefault.Large"
                         android:layout_width="172dp"
                         android:layout_height="240dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="32dp"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -101,10 +99,12 @@
                         android:id="@+id/audio2"
                         android:layout_width="113dp"
                         android:layout_height="102dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintBottom_toBottomOf="@+id/texto2"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/texto2"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="191dp" />
+                        tools:ignore="MissingConstraints" />
 
 
                 </android.support.constraint.ConstraintLayout>
@@ -126,8 +126,6 @@
                         style="@android:style/TextAppearance.DeviceDefault.Large"
                         android:layout_width="172dp"
                         android:layout_height="240dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="32dp"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -138,10 +136,12 @@
                         android:id="@+id/audio3"
                         android:layout_width="113dp"
                         android:layout_height="102dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintBottom_toBottomOf="@+id/texto3"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/texto3"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="191dp" />
+                        tools:ignore="MissingConstraints" />
 
                 </android.support.constraint.ConstraintLayout>
             </LinearLayout>
@@ -162,8 +162,6 @@
                         style="@android:style/TextAppearance.DeviceDefault.Large"
                         android:layout_width="172dp"
                         android:layout_height="240dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="32dp"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -174,10 +172,12 @@
                         android:id="@+id/audio4"
                         android:layout_width="113dp"
                         android:layout_height="102dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintBottom_toBottomOf="@+id/texto4"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/texto4"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="191dp" />
+                        tools:ignore="MissingConstraints" />
 
                     <Button
                         android:id="@+id/volver"

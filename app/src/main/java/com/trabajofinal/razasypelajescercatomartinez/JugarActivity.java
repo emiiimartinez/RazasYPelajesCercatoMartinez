@@ -64,7 +64,7 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-   /* public void startConfettiAnimation(){
+    public void startConfettiAnimation(){
         // confetti
         ImageView confettiImgView = (ImageView) findViewById(R.id.confettiImageView);
         confettiImgView.setBackgroundResource(R.drawable.anim_confetti);
@@ -94,7 +94,7 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         img.post(run);
     }
 
-    public void startTrophyAnimation() {
+   /* public void startTrophyAnimation() {
         startAnimation(R.id.trophyImageView, 1, 8, "rsz_copa_rotando");
     }
 */

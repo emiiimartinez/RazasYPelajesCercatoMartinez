@@ -125,7 +125,7 @@ public abstract class InteraccionManager {
     protected void determineWhatToDo() {
         if (this.context.gameWon()){
             // inform the user
-            this.context.makeToast("¡Ganaste!");
+            //this.context.makeToast("¡Ganaste!");
             // reset
             this.context.resetRondasyAciertos();
             // if RP}
@@ -135,7 +135,7 @@ public abstract class InteraccionManager {
                 // ask to retry game or play next
                 this.context.showNextLayout();
                 // confetti
-               // this.context.startConfettiAnimation();
+               this.context.startConfettiAnimation();
             }else{
                 if(!this.context.playingCruza()){
                     this.context.showNextLayout();
