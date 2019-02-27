@@ -21,6 +21,7 @@ public class RecGrilla extends AppCompatActivity {
     private CaballosProvider caballosProvider;
     private List<CaballoModel> caballos;
     private Button volver;
+    private ImageView iv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,37 +37,60 @@ public class RecGrilla extends AppCompatActivity {
         });
         caballosProvider = new CaballosProvider(this);
         caballos= caballosProvider.getHorsesList();
-        LinearLayout ll = findViewById(R.id.container);
 
-        for(int i=1; i < caballos.size(); i++){
-            LinearLayout layout1 = new LinearLayout(this);
-            layout1.setOrientation(LinearLayout.HORIZONTAL);
-            layout1.getLayoutParams().width=LinearLayout.LayoutParams.FILL_PARENT;
-            layout1.getLayoutParams().height = 0;
+        iv= findViewById(R.id.image1);
+        caballo = caballos.get(1);
+        String i = caballo.getImagen();
+        Drawable draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
 
-            for(int j=0; j<3; j++){
-                if(i<caballos.size()) {
-                    LinearLayout layout2 = new LinearLayout(this);
-                    layout2.setOrientation(LinearLayout.HORIZONTAL);
-                    layout2.getLayoutParams().width = LinearLayout.LayoutParams.FILL_PARENT;
-                    layout2.getLayoutParams().height = 0;
 
-                    ImageView iv = new ImageView(this);
-                    caballo = caballos.get(i);
-                    String nombre = caballo.getImagen();
-                    Drawable draw = getResources().getDrawable(getResources().getIdentifier(nombre, "drawable", getPackageName()));
-                    iv.setImageDrawable(draw);
+        iv= findViewById(R.id.image2);
+        caballo = caballos.get(2);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
 
-                    layout2.addView(iv);
-                    layout1.addView(layout2);
-                    i++;
-                }
-            }
-            if(i<caballos.size()) {
-                i--;
-            }
-            ll.addView(layout1);
+        iv= findViewById(R.id.image3);
+        caballo = caballos.get(3);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
 
-        }
+        iv= findViewById(R.id.image4);
+        caballo = caballos.get(4);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
+
+        iv= findViewById(R.id.image5);
+        caballo = caballos.get(5);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
+
+        iv= findViewById(R.id.image6);
+        caballo = caballos.get(6);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
+
+        iv= findViewById(R.id.image7);
+        caballo = caballos.get(7);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
+
+        iv= findViewById(R.id.image8);
+        caballo = caballos.get(8);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
+
+        iv= findViewById(R.id.image9);
+        caballo = caballos.get(9);
+        i = caballo.getImagen();
+        draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
+        iv.setImageDrawable(draw);
     }
 }

@@ -516,7 +516,7 @@
 
 
                             <TextView
-                                android:id="@+id/Texto5"
+                                android:id="@+id/texto5"
                                 style="@android:style/TextAppearance.DeviceDefault.Large"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -541,7 +541,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.504"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/Texto5" />
+                                app:layout_constraintTop_toBottomOf="@+id/texto5" />
 
 
                             <Button

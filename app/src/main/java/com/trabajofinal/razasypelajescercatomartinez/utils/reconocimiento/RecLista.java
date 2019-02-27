@@ -61,27 +61,52 @@ public class RecLista extends AppCompatActivity {
 
 
         iv= findViewById(R.id.image2);
+        raza = findViewById(R.id.texto2);
+        pelaje = findViewById(R.id.Texto22);
+        texto = findViewById(R.id.Texto23);
         caballo = caballos.get(2);
         i = caballo.getImagen();
         draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
         iv.setImageDrawable(draw);
+        raza.setText(caballo.getRaza());
+        pelaje.setText(caballo.getPelaje());
+        texto.setText(lorem);
+
 
         iv= findViewById(R.id.image3);
+        raza = findViewById(R.id.texto3);
+        pelaje = findViewById(R.id.Texto32);
+        texto = findViewById(R.id.Texto33);
         caballo = caballos.get(3);
         i = caballo.getImagen();
         draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
         iv.setImageDrawable(draw);
+        raza.setText(caballo.getRaza());
+        pelaje.setText(caballo.getPelaje());
+        texto.setText(lorem);
 
         iv= findViewById(R.id.image4);
+        raza = findViewById(R.id.texto4);
+        pelaje = findViewById(R.id.Texto42);
+        texto = findViewById(R.id.Texto43);
         caballo = caballos.get(4);
         i = caballo.getImagen();
         draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
         iv.setImageDrawable(draw);
+        raza.setText(caballo.getRaza());
+        pelaje.setText(caballo.getPelaje());
+        texto.setText(lorem);
 
         iv= findViewById(R.id.image5);
+        raza = findViewById(R.id.texto5);
+        pelaje = findViewById(R.id.Texto52);
+        texto = findViewById(R.id.Texto53);
         caballo = caballos.get(5);
         i = caballo.getImagen();
         draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
         iv.setImageDrawable(draw);
+        raza.setText(caballo.getRaza());
+        pelaje.setText(caballo.getPelaje());
+        texto.setText(lorem);
     }
 }
