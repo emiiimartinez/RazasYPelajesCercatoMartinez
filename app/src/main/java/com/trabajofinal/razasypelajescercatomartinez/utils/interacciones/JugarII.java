@@ -3,8 +3,6 @@ package com.trabajofinal.razasypelajescercatomartinez.utils.interacciones;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,7 +10,7 @@ import android.widget.ImageView;
 import com.trabajofinal.razasypelajescercatomartinez.JugarActivity;
 import com.trabajofinal.razasypelajescercatomartinez.MainActivity;
 import com.trabajofinal.razasypelajescercatomartinez.R;
-import com.trabajofinal.razasypelajescercatomartinez.utils.Caballos.CaballoModel;
+import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -73,8 +71,8 @@ public class JugarII extends InteraccionManager {
     }
     @Override
     public void showWhatToLookFor() {
-        super.showWhatToLookFor();
-        setImageResource(horseToFindImgView, whatToLookFor);
+      super.showWhatToLookFor();
+      setImageResource(horseToFindImgView, caballoAcierto.getImagen());
     }
     @Override
     public void showPossibleAnswers() {

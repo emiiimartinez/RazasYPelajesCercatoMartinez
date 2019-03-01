@@ -1,4 +1,4 @@
-package com.trabajofinal.razasypelajescercatomartinez.utils.Caballos;
+package com.trabajofinal.razasypelajescercatomartinez.utils.caballos;
 
 import android.content.Context;
 import android.os.Bundle;

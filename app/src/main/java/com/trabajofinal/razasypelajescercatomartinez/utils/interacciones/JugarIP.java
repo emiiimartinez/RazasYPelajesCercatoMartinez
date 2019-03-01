@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.trabajofinal.razasypelajescercatomartinez.JugarActivity;
 import com.trabajofinal.razasypelajescercatomartinez.MainActivity;
 import com.trabajofinal.razasypelajescercatomartinez.R;
-import com.trabajofinal.razasypelajescercatomartinez.utils.Caballos.CaballoModel;
+import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

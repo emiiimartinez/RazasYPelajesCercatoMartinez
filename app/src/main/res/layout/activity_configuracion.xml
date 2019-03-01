@@ -150,7 +150,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/interaccion"
+                        android:id="@+id/minijuego"
                         style="@android:style/TextAppearance.DeviceDefault.Large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -166,21 +166,82 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <RadioGroup
-                        android:id="@+id/interactionRadioGroup"
-                        android:layout_width="219dp"
-                        android:layout_height="184dp"
+                        android:id="@+id/minijuegoRadioGroup"
+                        android:layout_width="251dp"
+                        android:layout_height="148dp"
                         android:layout_marginStart="32dp"
                         android:layout_marginLeft="32dp"
-                        android:layout_marginTop="64dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
-                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/minijuego">
+
+                        <RadioButton
+                            android:id="@+id/RPRadioBtn"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:paddingRight="@dimen/fab_margin"
+                            android:text="@string/RPRadBtnTxt"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/RPJRadioBtn"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:paddingRight="@dimen/fab_margin"
+                            android:text="@string/RPJRadBtnTxt"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/CRadioBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/CRadBtnTxt"
+                            android:textSize="18sp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/interaccion"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="248dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/interaccionTxt"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/interactionRadioGroup"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/minijuegoRadioGroup" />
+
+                    <RadioGroup
+                        android:id="@+id/interactionRadioGroup"
+                        android:layout_width="219dp"
+                        android:layout_height="104dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginBottom="16dp"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/interaccion"
-                        app:layout_constraintVertical_bias="0.0">
+                        app:layout_constraintStart_toStartOf="parent">
 
                         <RadioButton
                             android:id="@+id/InteracARadBtn"
@@ -200,14 +261,6 @@
                             android:layout_weight="1"
                             android:paddingRight="@dimen/fab_margin"
                             android:text="@string/InteracBRadBtnTxt"
-                            android:textSize="18sp" />
-
-                        <RadioButton
-                            android:id="@+id/InteracCRadBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/InteracCRadBtnTxt"
                             android:textSize="18sp" />
 
                     </RadioGroup>

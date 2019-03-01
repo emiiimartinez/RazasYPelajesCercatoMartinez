@@ -13,7 +13,7 @@ import android.widget.Switch;
 public class ConfiguracionActivity extends AppCompatActivity {
     Switch levelSwitch;
     Switch audioSwitch;
-    RadioGroup interactionRadioGroup;
+    RadioGroup interactionRadioGroup,minijuegoRadioGroup;
     RadioGroup recoViewModeRadioGroup, recoFilterRadioGroup;
 
     @Override
@@ -29,6 +29,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         audioSwitch = findViewById(R.id.audioSwitch);
         //recoFilterRadioGroup = findViewById(R.id.filterViewModeRadioGroup);
         interactionRadioGroup = findViewById(R.id.interactionRadioGroup);
+       // minijuegoRadioGroup = findViewById(R.id.minijuegoRadioGroup);
         recoViewModeRadioGroup = findViewById(R.id.recoViewModeRadioGroup);
 
         // set all values
@@ -40,6 +41,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
      //   recoFilterRadioGroup.check(configPreferences.getInt(getString(R.string.reco_filter_key), R.id.r));
         interactionRadioGroup.check(configPreferences
                 .getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn));
+      //  mini.check(configPreferences.getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn));
         recoViewModeRadioGroup.check(configPreferences
                 .getInt(getString(R.string.reco_view_mode_pref_key), R.id.listRadioBtn));
     }

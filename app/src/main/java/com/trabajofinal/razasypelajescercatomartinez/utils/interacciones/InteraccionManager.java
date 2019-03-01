@@ -5,19 +5,22 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.trabajofinal.razasypelajescercatomartinez.JugarActivity;
 import com.trabajofinal.razasypelajescercatomartinez.MainActivity;
 import com.trabajofinal.razasypelajescercatomartinez.R;
-import com.trabajofinal.razasypelajescercatomartinez.utils.Caballos.CaballoModel;
-import com.trabajofinal.razasypelajescercatomartinez.utils.Caballos.CaballosProvider;
+import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
+import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
 import com.trabajofinal.razasypelajescercatomartinez.utils.audios.AudioPlayer;
 import com.trabajofinal.razasypelajescercatomartinez.utils.audios.AudioProvider;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Thread.sleep;
 
 public abstract class InteraccionManager {
     protected JugarActivity context;
@@ -67,7 +70,7 @@ public abstract class InteraccionManager {
     }
 
     public void showWhatToLookFor(){
-        //Log.d("!!!WHAT-TO-LOOK-FOR", whatToLookFor);
+        Log.d("!!!WHAT-TO-LOOK-FOR", whatToLookFor);
     }
 
     public void showPossibleAnswers(List<? extends View> views) {
@@ -111,6 +114,11 @@ public abstract class InteraccionManager {
         ArrayList<Integer> sounds = new ArrayList<>();
         if ( viewValidationCondition() ){
             sounds.add(AudioProvider.INSTANCE.getSoundAt("success"));
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             // assertions ++
             this.context.incrementAssertions();
         } else {
@@ -129,7 +137,7 @@ public abstract class InteraccionManager {
             // reset
             this.context.resetRondasyAciertos();
             // if RP}
-            if(!this.context.playingRazasYPelajesJuntos()){
+            if(!this.context.playingCruza()){
                 // enable RPJ in settings
               //  this.context.enableRPJ();
                 // ask to retry game or play next
@@ -137,16 +145,14 @@ public abstract class InteraccionManager {
                 // confetti
                this.context.startConfettiAnimation();
             }else{
-                if(!this.context.playingCruza()){
-                    this.context.showNextLayout();
-                }else {
-                    // this.context.showTrophy();
-                    // this.context.startTrophyAnimation();
-                }
+                this.context.playRazasYPelajes();
+                     this.context.showTrophy();
+                     this.context.startTrophyAnimation();
+
             }
         }else if (this.context.isImpossibleToWin()){
             // inform user
-            this.context.makeToast("Obtuviste menos de 3 respuestas correctas en 5 intentos.");
+          //  this.context.makeToast("Obtuviste menos de 3 respuestas correctas en 5 intentos.");
             // reset
             this.context.resetRondasyAciertos();
             // ask to go home or retry game

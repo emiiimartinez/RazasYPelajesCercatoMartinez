@@ -26,11 +26,14 @@
     <string name="audioTxt">Audio:</string>
     <string name="levelTxt"> Nivel:</string>
     <string name="RPRadBtnTxt">Razas y Pelajes</string>
+    <string name="RPJRadBtnTxt">Razas y Pelajes Juntos</string>
+    <string name="CRadBtnTxt">Cruzas</string>
     <string name="InteracARadBtnTxt">Imagen - Palabra</string>
     <string name="InteracBRadBtnTxt">Palabra - Imagen</string>
     <string name="InteracCRadBtnTxt">Imagen - Imagen</string>
     <string name="recoTxt">Modo Reconocimiento:</string>
-    <string name="minijuegoTxt">Formas de Interaccion:</string>
+    <string name="interaccionTxt">Formas de Interaccion:</string>
+    <string name="minijuegoTxt">Minijuego:</string>
     <bool name="pref_default_nivel">false</bool>
     <bool name="pref_default_audio">true</bool>
 

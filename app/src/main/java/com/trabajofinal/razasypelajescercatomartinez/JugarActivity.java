@@ -13,9 +13,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.trabajofinal.razasypelajescercatomartinez.utils.Caballos.CaballoModel;
-import com.trabajofinal.razasypelajescercatomartinez.utils.Caballos.CaballosProvider;
+import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
+import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
 import com.trabajofinal.razasypelajescercatomartinez.utils.interacciones.InteraccionManager;
+import com.trabajofinal.razasypelajescercatomartinez.utils.interacciones.JugarII;
 import com.trabajofinal.razasypelajescercatomartinez.utils.interacciones.JugarIP;
 import com.trabajofinal.razasypelajescercatomartinez.utils.interacciones.JugarPI;
 
@@ -38,18 +39,33 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         // reset
         resetRondasyAciertos();
         // layout according to the chosen interaction mode
-        prepareLayout();
+        minijuego();
         // let's play!
         newGame();
     }
 
+    public void minijuego() {
+        if (playingRazasYPelajesJuntos()) {
+            prepareLayout();
+        } else {
+            if (playingCruza()) {
+                prepareCruza();
+            } else {
+                prepareLayout();
+            }
+        }
+    }
 
+    public void prepareCruza() {
+        setContentView(R.layout.activity_jugar_ii);
+        interaccionManager = new JugarII(this, playingLevel2());
+    }
 
-    public void prepareLayout(){
-        if( playingWithBInteraction() ){
+    public void prepareLayout() {
+        if (playingWithBInteraction()) {
             setContentView(R.layout.activity_jugar_pi);
             interaccionManager = new JugarPI(this, playingLevel2());
-        }else{
+        } else {
             setContentView(R.layout.activity_jugar_ip);
             interaccionManager = new JugarIP(this, playingLevel2());
         }
@@ -64,7 +80,7 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public void startConfettiAnimation(){
+    public void startConfettiAnimation() {
         // confetti
         ImageView confettiImgView = (ImageView) findViewById(R.id.confettiImageView);
         confettiImgView.setBackgroundResource(R.drawable.anim_confetti);
@@ -94,27 +110,31 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         img.post(run);
     }
 
-   /* public void startTrophyAnimation() {
-        startAnimation(R.id.trophyImageView, 1, 8, "rsz_copa_rotando");
-    }
-*/
-    public void volver(View view){
+     public void startTrophyAnimation() {
+         startAnimation(R.id.trophyImageView, 1, 5, "rsz_copa_rotando");
+     }
+
+    public void volver(View view) {
         Log.d("!!!!GAME-FLOW", "volver");
         finish();
     }
 
-    public void retry(View view){
+    public void retry(View view) {
         Log.d("!!!!GAME-FLOW", "retry");
         prepareLayout();
         // play again
         newGame();
     }
 
-    public void next(View view){
+    public void next(View view) {
         Log.d("!!!!GAME-FLOW", "next");
         // -> select 'playing RPJ'
-        playRazasYPelajesJuntos();
-        prepareLayout();
+        if (playingRazasYPelajesJuntos()) {
+            playCruza();
+        } else {
+            playRazasYPelajesJuntos();
+        }
+        minijuego();
         // play again
         newGame();
     }
@@ -122,54 +142,62 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if(view == volver){
+        if (view == volver) {
             findViewById(R.id.volver).setBackgroundResource(R.drawable.ic_home_click);
             finish();
-        }
-        else{
+        } else {
             interaccionManager.manageOnClick(view);
         }
     }
 
-    public Boolean playingRazasYPelajesJuntos(){
-        Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.InteracARadBtn);
-        return minijuegoPref == R.id.InteracBRadBtn;
-    }
-    public Boolean playingCruza(){
-        Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.InteracARadBtn);
-        return minijuegoPref == R.id.InteracCRadBtn;
+    public Boolean playingRazasYPelajesJuntos() {
+        Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
+        return minijuegoPref == R.id.RPJRadioBtn;
     }
 
-    private Boolean playingWithBInteraction(){
+    public Boolean playingCruza() {
+        Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.RPJRadioBtn);
+        return minijuegoPref == R.id.CRadioBtn;
+    }
+
+    private Boolean playingWithBInteraction() {
         Integer interactionPref = getConfigSharedPrefs().getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn);
         Log.d("!!!!!!!!!!!!INTERACTION", "playingWithBInteraction? " + String.valueOf(interactionPref == R.id.InteracBRadBtn));
         return interactionPref == R.id.InteracBRadBtn;
     }
 
-    public Boolean listeningToFemAudio(){
+    public Boolean listeningToFemAudio() {
         Resources res = getResources();
         Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
-        return  femAudioSwitchPref;
+        return femAudioSwitchPref;
     }
 
-    private Boolean playingLevel2(){
+    private Boolean playingLevel2() {
         Resources res = getResources();
         Boolean level2SwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.level2_pref_key), res.getBoolean(R.bool.pref_default_nivel));
-        return  level2SwitchPref;
+        return level2SwitchPref;
     }
 
-   private void playGame(Integer game){
+    private void playGame(Integer game) {
         SharedPreferences.Editor editor = getConfigSharedPrefs().edit();
         editor.putInt(getString(R.string.minijuego_pref_key), game);
         editor.commit();
     }
 
-    public void playRazasYPelajesJuntos(){
-        playGame(R.id.InteracBRadBtn);
+    public void playRazasYPelajesJuntos() {
+        playGame(R.id.RPJRadioBtn);
     }
 
-    private SharedPreferences getConfigSharedPrefs(){
-        return getSharedPreferences(getString(R.string.config_preferences),Context.MODE_PRIVATE);
+    public void playCruza() {
+        playGame(R.id.CRadioBtn);
+    }
+    public void playRazasYPelajes() {
+        playGame(R.id.RPRadioBtn);
+    }
+
+
+    private SharedPreferences getConfigSharedPrefs() {
+        return getSharedPreferences(getString(R.string.config_preferences), Context.MODE_PRIVATE);
     }
 
     private String randomRazaOPelaje() {
@@ -178,66 +206,63 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         return temp[random.nextInt(temp.length)];
     }
 
-    private void horseToFind(){
+    private void horseToFind() {
         caballoCorrecto = caballosProvider.randomHorse();
         // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
         // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
-        if(playingRazasYPelajesJuntos()) {
+        if (playingRazasYPelajesJuntos()) {
             whatToLookFor = caballoCorrecto.getName();
-        }else{
-            whatToLookFor  = randomRazaOPelaje();
+        } else {
+            whatToLookFor = randomRazaOPelaje();
         }
     }
 
-    private void determineHorseToFind(){
+    private void determineHorseToFind() {
         horseToFind();
-        while( whatToLookFor.equals(lastLookedFor) ){
+        while (whatToLookFor.equals(lastLookedFor)) {
             horseToFind();
         }
         lastLookedFor = whatToLookFor;
     }
 
-    private Boolean searchingForType(){
+    private Boolean searchingForType() {
         return caballosProvider.isAHorseType(whatToLookFor);
     }
 
-    private Boolean searchingForHairType(){
-        return  caballosProvider.isAHorseHairType(whatToLookFor);
+    private Boolean searchingForHairType() {
+        return caballosProvider.isAHorseHairType(whatToLookFor);
     }
 
-    private Boolean searchingForFullName(){
+    private Boolean searchingForFullName() {
         return (!searchingForType() && !searchingForHairType());
     }
 
-    public void incrementAssertions(){
+    public void incrementAssertions() {
         aciertos++;
     }
 
-    public Boolean gameWon(){
-        return aciertos>=3 && rondas==5;
+    public Boolean gameWon() {
+        return aciertos >= 3 && rondas == 5;
     }
 
-    public Boolean isImpossibleToWin(){
-        return aciertos<3 && rondas==5;
+    public Boolean isImpossibleToWin() {
+        return aciertos < 3 && rondas == 5;
     }
 
-    public void logdGameFlow(){
-        Log.d("!!!!GAME-FLOW", "ROUNDS:"+rondas+" ASSERTIONS:"+aciertos);
+    public void logdGameFlow() {
+        Log.d("!!!!GAME-FLOW", "ROUNDS:" + rondas + " ASSERTIONS:" + aciertos);
     }
 
-    public void makeToast(String string){
+    public void makeToast(String string) {
         Toast toast = Toast.makeText(this, string, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 40);
+        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 40);
         toast.show();
     }
 
-   /* public void showTrophy() {
-        setContentView(R.layout.activity_game_trophy);
-        // home btn
-        homeImgView = findViewById(R.id.homeImgView);
-        homeImgView.setOnClickListener(this);
-    }
-*/
+     public void showTrophy() {
+         setContentView(R.layout.activity_game_trophy);
+     }
+
     public void showRetryLayout() {
         setContentView(R.layout.activity_jugar_playagain);
     }
