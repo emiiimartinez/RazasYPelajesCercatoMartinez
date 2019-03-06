@@ -79,15 +79,14 @@ public abstract class InteraccionManager {
         }
     }
     public void showRespuestasCruza(List<? extends View> views) {
-        resetSoundImageToRegular();
         for (int i = 0; i < views.size(); i++) {
-            CaballoModel randomHorse = caballosProvider.randomHorse();
+            CaballoModel randomHorseCruza = caballosProvider.randomHorseCruza();
             // we dont wanna have the same horse attribute twice
-            while(this.isAlreadyInViews( randomHorse, views) ){
-                randomHorse = caballosProvider.randomHorse();
+            while(this.isAlreadyInViews( randomHorseCruza, views) ){
+                randomHorseCruza = caballosProvider.randomHorseCruza();
             }
-            views.get(i).setTag(randomHorse);
-            manageViewsListItem(randomHorse, i);
+            views.get(i).setTag(randomHorseCruza);
+            manageViewsListItem(randomHorseCruza, i);
         }
     }
 
@@ -203,6 +202,8 @@ public abstract class InteraccionManager {
     public abstract void resetViewsTags();
 
     public abstract void showRespuestasPosibles();
+
+    public abstract void showRespuestasCruza();
 
     protected abstract void resetSoundImageToRegular();
 

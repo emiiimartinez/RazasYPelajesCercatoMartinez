@@ -91,6 +91,11 @@ public class JugarPI extends InteraccionManager {
     }
 
     @Override
+    public void showRespuestasCruza() {
+
+    }
+
+    @Override
     protected void resetSoundImageToRegular() {
         soundImgView.setImageResource(R.drawable.ic_audio_regular);
     }

@@ -119,6 +119,11 @@ public class JugarIP extends InteraccionManager {
     }
 
     @Override
+    public void showRespuestasCruza() {
+
+    }
+
+    @Override
     protected void resetSoundImageToRegular() {
         setSoundsImgViewsBackgroundImage();
     }

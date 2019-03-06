@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CaballoModel {
-    private String raza, pelaje;
+    private String raza, pelaje,potrillo,padres;
     private String imagen;
     private Map<String, Integer[]> audio;
 
@@ -21,7 +21,10 @@ public class CaballoModel {
         this.pelaje = pelaje;
         this.imagen = imagen;
     }
-
+    public CaballoModel(String potrillo, String padres) {
+        this.potrillo = potrillo;
+        this.padres = padres;
+    }
     public String getRaza() {
         return raza;
     }
@@ -86,5 +89,21 @@ public class CaballoModel {
                 "breed='" + raza + '\'' +
                 ", fur='" + pelaje + '\'' +
                 '}';
+    }
+
+    public String getPotrillo() {
+        return potrillo;
+    }
+
+    public void setPotrillo(String potrillo) {
+        this.potrillo = potrillo;
+    }
+
+    public String getPadres() {
+        return padres;
+    }
+
+    public void setPadres(String padres) {
+        this.padres = padres;
     }
 }

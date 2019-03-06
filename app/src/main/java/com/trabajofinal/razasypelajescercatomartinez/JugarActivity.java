@@ -199,7 +199,12 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
     private void horseToFind() {
         //seteo el caballo a encontrar
-        caballoCorrecto = caballosProvider.randomHorse();
+        if(playingCruza()){
+            caballoCorrecto = caballosProvider.randomHorseCruza();
+        }
+        else {
+            caballoCorrecto = caballosProvider.randomHorse();
+        }
         //si son RPJ busco por nombre, sino hago random entre razas y pelajes y busco por uno
         if (playingRazasYPelajesJuntos()) {
             respuestaCorrecta = caballoCorrecto.getName();
@@ -240,13 +245,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         return aciertos < 3 && rondas == 5;
     }
 
-
-    public void makeToast(String string) {
-        Toast toast = Toast.makeText(this, string, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 40);
-        toast.show();
-    }
-
      public void showTrophy() {
          setContentView(R.layout.activity_game_trophy);
      }
@@ -267,7 +265,13 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         interaccionManager.busqueda(caballoCorrecto, respuestaCorrecta, searchingForRaza(), searchingForPelaje(), searchingForNombre(), listeningToFemAudio());
 
         //pones posibles respuestas y dsp pones la respuesta correcta si no esta tdv
-        interaccionManager.showRespuestasPosibles();
+        if(playingCruza()){
+            interaccionManager.showRespuestasCruza();
+        }
+        else{
+            interaccionManager.showRespuestasPosibles();
+        }
+
         interaccionManager.putRespuestaCorrecta();
     }
 

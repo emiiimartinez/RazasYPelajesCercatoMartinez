@@ -23,6 +23,7 @@ public class JugarII extends InteraccionManager {
     private Button volver;
     public JugarII(final JugarActivity context, Boolean playingLevel2) {
         super(context, playingLevel2);
+
         volver = context.findViewById(R.id.volver);
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +71,18 @@ public class JugarII extends InteraccionManager {
         resetViewsTags(imageViews);
     }
     @Override
-    public void showWhatToLookFor() {
+    public void showWhatToLookFor(){
       super.showWhatToLookFor();
-      setImageResource(horseToFindImgView, caballoAcierto.getImagen());
+      setImageResource(horseToFindImgView, caballoAcierto.getPotrillo());
     }
     @Override
     public void showRespuestasPosibles() {
-        showRespuestasPosibles(imageViews);
+
+    }
+
+    @Override
+    public void showRespuestasCruza() {
+        showRespuestasCruza(imageViews);
     }
 
     @Override
@@ -87,7 +93,7 @@ public class JugarII extends InteraccionManager {
     @Override
     protected void manageViewsListItem(CaballoModel randomHorse, int i) {
         ImageView imageView = imageViews.get(i);
-        setImageResource(imageView, randomHorse.getImagen());
+        setImageResource(imageView, randomHorse.getPadres());
     }
 
     @Override
