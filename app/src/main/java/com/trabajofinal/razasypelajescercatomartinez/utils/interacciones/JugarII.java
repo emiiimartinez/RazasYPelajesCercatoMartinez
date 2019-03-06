@@ -75,8 +75,8 @@ public class JugarII extends InteraccionManager {
       setImageResource(horseToFindImgView, caballoAcierto.getImagen());
     }
     @Override
-    public void showPossibleAnswers() {
-        showPossibleAnswers(imageViews);
+    public void showRespuestasPosibles() {
+        showRespuestasPosibles(imageViews);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class JugarII extends InteraccionManager {
     }
 
     @Override
-    public void putAnswerInGame() {
+    public void putRespuestaCorrecta() {
         // if there is nothing matching the answer, upload horseToFind
         if ( !isAlreadyInViews(caballoAcierto, imageViews) ){
             Collections.shuffle(imageViews);

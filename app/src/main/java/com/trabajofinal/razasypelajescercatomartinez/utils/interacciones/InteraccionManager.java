@@ -1,16 +1,12 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.interacciones;
 
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.trabajofinal.razasypelajescercatomartinez.JugarActivity;
-import com.trabajofinal.razasypelajescercatomartinez.MainActivity;
 import com.trabajofinal.razasypelajescercatomartinez.R;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
@@ -36,7 +32,6 @@ public abstract class InteraccionManager {
     public InteraccionManager(JugarActivity context, Boolean playingLevel2) {
         this.context = context;
         this.caballoAcierto = new CaballoModel();
-        //this.whatToLookFor = "";
         this.searchingForRaza = false;
         this.searchingForPelaje = false;
         this.searchingForName = false;
@@ -59,21 +54,31 @@ public abstract class InteraccionManager {
         }
     }
 
-    public void informAboutWhatToLookFor(CaballoModel horseToFind, String whatToLookFor, Boolean searchingForType,
-                                         Boolean searchingForHairType, Boolean searchingForFullName, Boolean listeningToFemAudio){
-        this.caballoAcierto = horseToFind;
-        this.whatToLookFor = whatToLookFor;
+    public void busqueda(CaballoModel caballoCorrecto, String respuestaCorrecta, Boolean searchingForType, Boolean searchingForPelaje, Boolean searchingForNombre, Boolean listeningToFemAudio){
+        this.caballoAcierto = caballoCorrecto;
+        this.whatToLookFor = respuestaCorrecta;
         this.searchingForRaza = searchingForType;
-        this.searchingForPelaje = searchingForHairType;
-        this.searchingForName = searchingForFullName;
+        this.searchingForPelaje = searchingForPelaje;
+        this.searchingForName = searchingForNombre;
         this.listeningToFemAudio = listeningToFemAudio;
     }
 
     public void showWhatToLookFor(){
-        Log.d("!!!WHAT-TO-LOOK-FOR", whatToLookFor);
     }
 
-    public void showPossibleAnswers(List<? extends View> views) {
+    public void showRespuestasPosibles(List<? extends View> views) {
+        resetSoundImageToRegular();
+        for (int i = 0; i < views.size(); i++) {
+            CaballoModel randomHorse = caballosProvider.randomHorse();
+            // we dont wanna have the same horse attribute twice
+            while(this.isAlreadyInViews( randomHorse, views) ){
+                randomHorse = caballosProvider.randomHorse();
+            }
+            views.get(i).setTag(randomHorse);
+            manageViewsListItem(randomHorse, i);
+        }
+    }
+    public void showRespuestasCruza(List<? extends View> views) {
         resetSoundImageToRegular();
         for (int i = 0; i < views.size(); i++) {
             CaballoModel randomHorse = caballosProvider.randomHorse();
@@ -120,12 +125,11 @@ public abstract class InteraccionManager {
                 e.printStackTrace();
             }
             // assertions ++
-            this.context.incrementAssertions();
+            this.context.incrementAciertos();
         } else {
             sounds.add(AudioProvider.INSTANCE.getSoundAt("error"));
         }
         AudioPlayer.wannaPlaySound(sounds, this.context);
-        this.context.logdGameFlow();
         // determine what to do
         determineWhatToDo();
     }
@@ -150,7 +154,7 @@ public abstract class InteraccionManager {
                      this.context.startTrophyAnimation();
 
             }
-        }else if (this.context.isImpossibleToWin()){
+        }else if (this.context.gameLost()){
             // inform user
           //  this.context.makeToast("Obtuviste menos de 3 respuestas correctas en 5 intentos.");
             // reset
@@ -198,13 +202,13 @@ public abstract class InteraccionManager {
 
     public abstract void resetViewsTags();
 
-    public abstract void showPossibleAnswers();
+    public abstract void showRespuestasPosibles();
 
     protected abstract void resetSoundImageToRegular();
 
     protected abstract void manageViewsListItem(CaballoModel horseImgId, int randomHorseImgId);
 
-    public abstract void putAnswerInGame();
+    public abstract void putRespuestaCorrecta();
 
     public abstract void manageOnClick(View view);
 

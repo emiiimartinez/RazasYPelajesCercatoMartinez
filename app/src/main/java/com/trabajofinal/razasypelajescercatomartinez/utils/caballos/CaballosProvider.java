@@ -57,7 +57,7 @@ public class CaballosProvider extends AppCompatActivity {
         return horsesList.get(0);
     }
 
-    public Boolean isAHorseType(String word){
+    public Boolean isAHorseRaza(String word){
         for (CaballoModel horse : horsesList) {
             if ( horse.getRaza().equals(word) ) {
                 return true;
@@ -66,7 +66,7 @@ public class CaballosProvider extends AppCompatActivity {
         return false;
     }
 
-    public Boolean isAHorseHairType(String word) {
+    public Boolean isAHorsePelaje(String word) {
         for (CaballoModel horse : horsesList) {
             if ( horse.getPelaje().equals(word) ) {
                 return true;

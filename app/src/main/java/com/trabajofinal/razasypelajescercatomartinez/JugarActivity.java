@@ -1,13 +1,11 @@
 package com.trabajofinal.razasypelajescercatomartinez;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,9 +22,8 @@ import java.util.Random;
 
 public class JugarActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // used by both interaction modes
     private CaballoModel caballoCorrecto;
-    private String whatToLookFor, lastLookedFor;
+    private String respuestaCorrecta, respuestaAnterior;
     private ImageView volver;
     private InteraccionManager interaccionManager;
     private CaballosProvider caballosProvider;
@@ -115,27 +112,22 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
      }
 
     public void volver(View view) {
-        Log.d("!!!!GAME-FLOW", "volver");
         finish();
     }
 
     public void retry(View view) {
-        Log.d("!!!!GAME-FLOW", "retry");
-        prepareLayout();
-        // play again
+        minijuego();
+        // juego nuevo
         newGame();
     }
 
     public void next(View view) {
-        Log.d("!!!!GAME-FLOW", "next");
-        // -> select 'playing RPJ'
         if (playingRazasYPelajesJuntos()) {
             playCruza();
         } else {
             playRazasYPelajesJuntos();
         }
         minijuego();
-        // play again
         newGame();
     }
 
@@ -162,7 +154,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
     private Boolean playingWithBInteraction() {
         Integer interactionPref = getConfigSharedPrefs().getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn);
-        Log.d("!!!!!!!!!!!!INTERACTION", "playingWithBInteraction? " + String.valueOf(interactionPref == R.id.InteracBRadBtn));
         return interactionPref == R.id.InteracBRadBtn;
     }
 
@@ -207,37 +198,37 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void horseToFind() {
+        //seteo el caballo a encontrar
         caballoCorrecto = caballosProvider.randomHorse();
-        // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
-        // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
+        //si son RPJ busco por nombre, sino hago random entre razas y pelajes y busco por uno
         if (playingRazasYPelajesJuntos()) {
-            whatToLookFor = caballoCorrecto.getName();
+            respuestaCorrecta = caballoCorrecto.getName();
         } else {
-            whatToLookFor = randomRazaOPelaje();
+            respuestaCorrecta = randomRazaOPelaje();
         }
     }
 
-    private void determineHorseToFind() {
+    private void definirCaballo() {
         horseToFind();
-        while (whatToLookFor.equals(lastLookedFor)) {
+        while (respuestaCorrecta.equals(respuestaAnterior)) {
             horseToFind();
         }
-        lastLookedFor = whatToLookFor;
+        respuestaAnterior = respuestaCorrecta;
     }
 
-    private Boolean searchingForType() {
-        return caballosProvider.isAHorseType(whatToLookFor);
+    private Boolean searchingForRaza() {
+        return caballosProvider.isAHorseRaza(respuestaCorrecta);
     }
 
-    private Boolean searchingForHairType() {
-        return caballosProvider.isAHorseHairType(whatToLookFor);
+    private Boolean searchingForPelaje() {
+        return caballosProvider.isAHorsePelaje(respuestaCorrecta);
     }
 
-    private Boolean searchingForFullName() {
-        return (!searchingForType() && !searchingForHairType());
+    private Boolean searchingForNombre() {
+        return (!searchingForRaza() && !searchingForPelaje());
     }
 
-    public void incrementAssertions() {
+    public void incrementAciertos() {
         aciertos++;
     }
 
@@ -245,13 +236,10 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         return aciertos >= 3 && rondas == 5;
     }
 
-    public Boolean isImpossibleToWin() {
+    public Boolean gameLost() {
         return aciertos < 3 && rondas == 5;
     }
 
-    public void logdGameFlow() {
-        Log.d("!!!!GAME-FLOW", "ROUNDS:" + rondas + " ASSERTIONS:" + aciertos);
-    }
 
     public void makeToast(String string) {
         Toast toast = Toast.makeText(this, string, Toast.LENGTH_LONG);
@@ -272,40 +260,15 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void newGame() {
-        // new round
         rondas++;
-        // reset tags
         interaccionManager.resetViewsTags();
-        // determine horse to find
-        determineHorseToFind();
-        // tell the interactionM the answer data
-        interaccionManager.informAboutWhatToLookFor(caballoCorrecto, whatToLookFor, searchingForType(),
-                searchingForHairType(), searchingForFullName(), listeningToFemAudio());
-        // show in ui
-        interaccionManager.showWhatToLookFor();
-        // populate img views with random imgs
-        interaccionManager.showPossibleAnswers();
-        // put a random img view with the answer img ONLY if it isn't shown yet
-        interaccionManager.putAnswerInGame();
+        definirCaballo();
+
+        interaccionManager.busqueda(caballoCorrecto, respuestaCorrecta, searchingForRaza(), searchingForPelaje(), searchingForNombre(), listeningToFemAudio());
+
+        //pones posibles respuestas y dsp pones la respuesta correcta si no esta tdv
+        interaccionManager.showRespuestasPosibles();
+        interaccionManager.putRespuestaCorrecta();
     }
 
-    /*private SharedPreferences getEnableGamesSharedPrefs(){
-        return getSharedPreferences(String.valueOf(R.string.enable_games_preferences), Context.MODE_PRIVATE);
-    }
-
-    public void enableRPJ() {
-        enableGame(getString(R.string.RPJenabled_pref_key));
-    }
-
-    private void enableGame(String key){
-        Boolean RPJenabled = getEnableGamesSharedPrefs().getBoolean(getString(R.string.RPJenabled_pref_key), false);
-
-        if (!RPJenabled) {
-            Log.d("!!!!GAME-FLOW", "enableRPJ");
-            SharedPreferences.Editor editor = getEnableGamesSharedPrefs().edit();
-            editor.putBoolean(key, true);
-            editor.apply();
-            editor.commit();
-        }
-    }*/
 }
