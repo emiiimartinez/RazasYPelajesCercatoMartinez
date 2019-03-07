@@ -114,14 +114,11 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
      }
 
     public void volver(View view) {
-        Log.d("!!!!GAME-FLOW", "volver");
         finish();
     }
 
     public void retry(View view) {
-        Log.d("!!!!GAME-FLOW", "retry");
-        prepareLayout();
-        // play again
+        minijuego();
         newGame();
     }
 
@@ -231,19 +228,19 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         lastLookedFor = whatToLookFor;
     }
 
-    private Boolean searchingForType() {
+    private Boolean searchingForRaza() {
         return caballosProvider.isAHorseRaza(whatToLookFor);
     }
 
-    private Boolean searchingForHairType() {
+    private Boolean searchingForPelaje() {
         return caballosProvider.isAHorsePelaje(whatToLookFor);
     }
 
-    private Boolean searchingForFullName() {
-        return (!searchingForType() && !searchingForHairType());
+    private Boolean searchingForNombre() {
+        return (!searchingForRaza() && !searchingForPelaje());
     }
 
-    public void incrementAssertions() {
+    public void incrementAciertos() {
         aciertos++;
     }
 
@@ -255,9 +252,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         return aciertos < 3 && rondas == 5;
     }
 
-    public void logdGameFlow() {
-        Log.d("!!!!GAME-FLOW", "ROUNDS:" + rondas + " ASSERTIONS:" + aciertos);
-    }
 
     public void makeToast(String string) {
         Toast toast = Toast.makeText(this, string, Toast.LENGTH_LONG);
@@ -293,8 +287,8 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         if(playingCruza()){
             setearCruza();
         } else {
-            interaccionManager.busqueda(caballoCorrecto, whatToLookFor, searchingForType(),
-                    searchingForHairType(), searchingForFullName(), listeningToFemAudio());
+            interaccionManager.busqueda(caballoCorrecto, whatToLookFor, searchingForRaza(),
+                    searchingForPelaje(), searchingForNombre(), listeningToFemAudio());
             // show in ui
             interaccionManager.showWhatToLookFor();
             // populate img views with random imgs

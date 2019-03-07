@@ -108,21 +108,15 @@ public class JugarII extends InteraccionManager {
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void playHorseToFindSound() {
-        playHorseSound(caballoAcierto);
+
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void manageOnClick(View view) {
-        if (view == soundImgView){
-            //setImageResource( ((ImageView)this.context.findViewById(R.id.audioButton)), R.drawable.ic_audio_click);
-            playHorseToFindSound();
-        }else{
-            // se hizo click en una imagen
             selectedImageView = (ImageView) view;
             validateView();
-        }
     }
     @Override
     protected Boolean viewValidationCondition() {

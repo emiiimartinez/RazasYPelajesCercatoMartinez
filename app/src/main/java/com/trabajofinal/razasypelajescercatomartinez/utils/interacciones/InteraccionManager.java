@@ -90,10 +90,6 @@ public abstract class InteraccionManager {
     public void showRespuestasCruza(List<? extends View> views) {
         for (int i = 0; i < views.size(); i++) {
             CaballoModel randomHorseCruza = caballosProvider.randomHorseCruza();
-            // we dont wanna have the same horse attribute twice
-          /*  while(this.isAlreadyInViews( randomHorseCruza, views) ){
-                randomHorseCruza = caballosProvider.randomHorseCruza();
-            }*/
             views.get(i).setTag(randomHorseCruza);
             manageViewsListItem(randomHorseCruza, i);
         }
@@ -117,9 +113,6 @@ public abstract class InteraccionManager {
             return (((CaballoModel)view.getTag()).getPelaje())
                     .equals(horse.getPelaje());
         }else if(searchingForPotrillo){
-            Log.d("POTRIILO",horse.getPadres());
-            Log.d("potrillo",((CaballoModel)view.getTag()).getPadres());
-
             return(((CaballoModel)view.getTag()).getPadres()).equals(horse.getPadres());
         }
         return (((CaballoModel)view.getTag()).getName())
@@ -131,18 +124,16 @@ public abstract class InteraccionManager {
         ArrayList<Integer> sounds = new ArrayList<>();
         if ( viewValidationCondition() ){
             sounds.add(AudioProvider.INSTANCE.getSoundAt("success"));
-            try {
-                sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            // assertions ++
-            this.context.incrementAssertions();
+            this.context.incrementAciertos();
         } else {
             sounds.add(AudioProvider.INSTANCE.getSoundAt("error"));
         }
         AudioPlayer.wannaPlaySound(sounds, this.context);
-        this.context.logdGameFlow();
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // determine what to do
         determineWhatToDo();
     }
