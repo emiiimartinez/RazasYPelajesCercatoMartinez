@@ -25,6 +25,7 @@ public abstract class InteraccionManager {
     protected Boolean searchingForRaza;
     protected Boolean searchingForPelaje;
     protected Boolean searchingForName;
+    protected Boolean searchingForPotrillo;
     protected CaballosProvider caballosProvider;
     protected Boolean listeningToFemAudio;
     protected Boolean playingLevel2;
@@ -36,6 +37,7 @@ public abstract class InteraccionManager {
         this.searchingForRaza = false;
         this.searchingForPelaje = false;
         this.searchingForName = false;
+        this.searchingForPotrillo=false;
         this.listeningToFemAudio = false;
         this.playingLevel2 = playingLevel2;
         this.caballosProvider = new CaballosProvider(this.context);
@@ -54,8 +56,8 @@ public abstract class InteraccionManager {
         }
     }
 
-    public void informAboutWhatToLookFor(CaballoModel horseToFind, String whatToLookFor, Boolean searchingForType,
-                                         Boolean searchingForHairType, Boolean searchingForFullName, Boolean listeningToFemAudio){
+    public void busqueda(CaballoModel horseToFind, String whatToLookFor, Boolean searchingForType,
+                         Boolean searchingForHairType, Boolean searchingForFullName, Boolean listeningToFemAudio){
         this.caballoAcierto = horseToFind;
         this.whatToLookFor = whatToLookFor;
         this.searchingForRaza = searchingForType;
@@ -63,12 +65,17 @@ public abstract class InteraccionManager {
         this.searchingForName = searchingForFullName;
         this.listeningToFemAudio = listeningToFemAudio;
     }
+    public void busqueda(CaballoModel horseToFind, String whatToLookFor){
+        this.caballoAcierto = horseToFind;
+        this.searchingForPotrillo = true;
+        this.whatToLookFor = whatToLookFor;
+    }
 
     public void showWhatToLookFor(){
         Log.d("!!!WHAT-TO-LOOK-FOR", whatToLookFor);
     }
 
-    public void showPossibleAnswers(List<? extends View> views) {
+    public void showRespuestasPosibles(List<? extends View> views) {
         resetSoundImageToRegular();
         for (int i = 0; i < views.size(); i++) {
             CaballoModel randomHorse = caballosProvider.randomHorse();
@@ -109,6 +116,8 @@ public abstract class InteraccionManager {
         }else if( searchingForPelaje ){
             return (((CaballoModel)view.getTag()).getPelaje())
                     .equals(horse.getPelaje());
+        }else if(searchingForPotrillo){
+            return(((CaballoModel)view.getTag()).getPadres()).equals(horse.getPadres());
         }
         return (((CaballoModel)view.getTag()).getName())
                 .equals(horse.getName());
@@ -155,7 +164,7 @@ public abstract class InteraccionManager {
                      this.context.startTrophyAnimation();
 
             }
-        }else if (this.context.isImpossibleToWin()){
+        }else if (this.context.gameLost()){
             // inform user
           //  this.context.makeToast("Obtuviste menos de 3 respuestas correctas en 5 intentos.");
             // reset
@@ -172,7 +181,9 @@ public abstract class InteraccionManager {
         return ( ((CaballoModel)view.getTag()).getName() )
                 .contains(whatToLookFor);
     }
-
+    protected  Boolean validateCruza( View view){
+        return ( ((CaballoModel)view.getTag()).getPadres() ).contains(whatToLookFor);
+    }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     protected void playHorseSound(CaballoModel horse) {
         ArrayList<Integer> sounds = new ArrayList<>();
@@ -203,7 +214,7 @@ public abstract class InteraccionManager {
 
     public abstract void resetViewsTags();
 
-    public abstract void showPossibleAnswers();
+    public abstract void showRespuestasPosibles();
 
     public abstract void showRespuestasCruza();
 

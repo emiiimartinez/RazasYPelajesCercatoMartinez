@@ -72,7 +72,7 @@ public class JugarII extends InteraccionManager {
     @Override
     public void showWhatToLookFor() {
       super.showWhatToLookFor();
-        setImageResource(horseToFindImgView, caballoAcierto.getPotrillo());
+      setImageResource(horseToFindImgView, caballoAcierto.getPotrillo());
     }
 
     @Override
@@ -81,7 +81,7 @@ public class JugarII extends InteraccionManager {
     }
 
     @Override
-    public void showPossibleAnswers() {
+    public void showRespuestasPosibles() {
     }
 
     @Override
@@ -126,6 +126,6 @@ public class JugarII extends InteraccionManager {
     }
     @Override
     protected Boolean viewValidationCondition() {
-        return viewValidationCondition(selectedImageView);
+        return validateCruza(selectedImageView);
     }
 }

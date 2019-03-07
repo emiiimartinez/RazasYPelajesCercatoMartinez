@@ -57,7 +57,6 @@ public class CaballosProvider extends AppCompatActivity {
                 String nombre = potrilloJSON.getString("potrillo");
                 String padres = potrilloJSON.getString("padres");
                 horse = new CaballoModel(nombre,padres);
-                Map audio = new HashMap();
                 potrillosList.add(horse);
             }
         } catch (JSONException e) { e.printStackTrace(); }

@@ -114,8 +114,8 @@ public class JugarIP extends InteraccionManager {
     }
 
     @Override
-    public void showPossibleAnswers() {
-        showPossibleAnswers(horsesTextViews);
+    public void showRespuestasPosibles() {
+        showRespuestasPosibles(horsesTextViews);
     }
 
     @Override

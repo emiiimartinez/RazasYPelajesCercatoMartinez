@@ -1,7 +1,6 @@
 package com.trabajofinal.razasypelajescercatomartinez;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
@@ -209,16 +208,19 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     private void horseToFind() {
        if(playingCruza()){
        caballoCorrecto = caballosProvider.randomHorseCruza();
+       whatToLookFor = caballoCorrecto.getPadres();
        }
        else{ caballoCorrecto = caballosProvider.randomHorse();
-       }
-        // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
-        // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
+           // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
+           // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
         if (playingRazasYPelajesJuntos()) {
-            whatToLookFor = caballoCorrecto.getName();
-        } else {
-            whatToLookFor = randomRazaOPelaje();
-        }
+           whatToLookFor = caballoCorrecto.getName();
+       } else {
+           whatToLookFor = randomRazaOPelaje();
+       }
+       }
+
+
     }
 
     private void determineHorseToFind() {
@@ -249,7 +251,7 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         return aciertos >= 3 && rondas == 5;
     }
 
-    public Boolean isImpossibleToWin() {
+    public Boolean gameLost() {
         return aciertos < 3 && rondas == 5;
     }
 
@@ -274,6 +276,11 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     public void showNextLayout() {
         setContentView(R.layout.activity_jugar_next);
     }
+    public void setearCruza(){
+        interaccionManager.busqueda(caballoCorrecto, whatToLookFor);
+        interaccionManager.showWhatToLookFor();
+        interaccionManager.showRespuestasCruza();
+    }
 
     public void newGame() {
         // new round
@@ -282,19 +289,21 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         interaccionManager.resetViewsTags();
         // determine horse to find
         determineHorseToFind();
-        // tell the interactionM the answer data
-        interaccionManager.informAboutWhatToLookFor(caballoCorrecto, whatToLookFor, searchingForType(),
-                searchingForHairType(), searchingForFullName(), listeningToFemAudio());
-        // show in ui
-        interaccionManager.showWhatToLookFor();
-        // populate img views with random imgs
-       if(playingCruza()){
-           interaccionManager.showRespuestasCruza();
-       }
-       else {
-           interaccionManager.showPossibleAnswers();
+
+        if(playingCruza()){
+            setearCruza();
+        } else {
+            interaccionManager.busqueda(caballoCorrecto, whatToLookFor, searchingForType(),
+                    searchingForHairType(), searchingForFullName(), listeningToFemAudio());
+            // show in ui
+            interaccionManager.showWhatToLookFor();
+            // populate img views with random imgs
+            interaccionManager.showRespuestasPosibles();
        }
         // put a random img view with the answer img ONLY if it isn't shown yet
         interaccionManager.putAnswerInGame();
     }
+
+
+
 }

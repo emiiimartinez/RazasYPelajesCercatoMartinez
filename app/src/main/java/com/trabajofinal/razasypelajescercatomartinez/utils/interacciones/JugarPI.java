@@ -86,8 +86,8 @@ public class JugarPI extends InteraccionManager {
     }
 
     @Override
-    public void showPossibleAnswers() {
-        showPossibleAnswers(imageViews);
+    public void showRespuestasPosibles() {
+        showRespuestasPosibles(imageViews);
     }
 
     @Override
