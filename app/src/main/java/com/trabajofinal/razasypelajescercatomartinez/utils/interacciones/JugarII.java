@@ -82,7 +82,6 @@ public class JugarII extends InteraccionManager {
 
     @Override
     public void showPossibleAnswers() {
-        showPossibleAnswers(imageViews);
     }
 
     @Override

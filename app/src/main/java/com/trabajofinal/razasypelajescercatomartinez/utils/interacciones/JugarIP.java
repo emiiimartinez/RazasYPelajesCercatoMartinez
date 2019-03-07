@@ -114,13 +114,8 @@ public class JugarIP extends InteraccionManager {
     }
 
     @Override
-    public void showRespuestasPosibles() {
-        showRespuestasPosibles(horsesTextViews);
-    }
-
-    @Override
-    public void showRespuestasCruza() {
-
+    public void showPossibleAnswers() {
+        showPossibleAnswers(horsesTextViews);
     }
 
     @Override
@@ -151,7 +146,7 @@ public class JugarIP extends InteraccionManager {
     }
 
     @Override
-    public void putRespuestaCorrecta() {
+    public void putAnswerInGame() {
         // if there is nothing matching the answer, upload horseToFind
         if ( !isAlreadyInViews(caballoAcierto, horsesTextViews) ){
             Random random = new Random();

@@ -1,6 +1,4 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.interacciones;
-
-
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -42,7 +40,6 @@ public abstract class InteraccionManager {
         this.playingLevel2 = playingLevel2;
         this.caballosProvider = new CaballosProvider(this.context);
     }
-
 
     protected void setViewListItemsOnClickHandler(List<? extends View> list) {
         for (int i = 0; i < list.size(); i++) {

@@ -86,13 +86,8 @@ public class JugarPI extends InteraccionManager {
     }
 
     @Override
-    public void showRespuestasPosibles() {
-        showRespuestasPosibles(imageViews);
-    }
-
-    @Override
-    public void showRespuestasCruza() {
-
+    public void showPossibleAnswers() {
+        showPossibleAnswers(imageViews);
     }
 
     @Override
@@ -112,7 +107,7 @@ public class JugarPI extends InteraccionManager {
     }
 
     @Override
-    public void putRespuestaCorrecta() {
+    public void putAnswerInGame() {
         // if there is nothing matching the answer, upload horseToFind
         if ( !isAlreadyInViews(caballoAcierto, imageViews) ){
             Collections.shuffle(imageViews);
@@ -143,8 +138,4 @@ public class JugarPI extends InteraccionManager {
             validateView();
         }
     }
-
-
-
-
 }

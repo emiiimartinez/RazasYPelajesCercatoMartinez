@@ -207,12 +207,11 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void horseToFind() {
-        if(playingCruza()){
-            caballoCorrecto = caballosProvider.randomHorseCruza();
-        }
-        else {
-            caballoCorrecto = caballosProvider.randomHorse();
-        }
+       if(playingCruza()){
+       caballoCorrecto = caballosProvider.randomHorseCruza();
+       }
+       else{ caballoCorrecto = caballosProvider.randomHorse();
+       }
         // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
         // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
         if (playingRazasYPelajesJuntos()) {
@@ -289,34 +288,13 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         // show in ui
         interaccionManager.showWhatToLookFor();
         // populate img views with random imgs
-        if(playingCruza()){
-            interaccionManager.showRespuestasCruza();
-        }
-        else{
-            interaccionManager.showPossibleAnswers();
-        }
-
+       if(playingCruza()){
+           interaccionManager.showRespuestasCruza();
+       }
+       else {
+           interaccionManager.showPossibleAnswers();
+       }
         // put a random img view with the answer img ONLY if it isn't shown yet
         interaccionManager.putAnswerInGame();
     }
-
-    /*private SharedPreferences getEnableGamesSharedPrefs(){
-        return getSharedPreferences(String.valueOf(R.string.enable_games_preferences), Context.MODE_PRIVATE);
-    }
-
-    public void enableRPJ() {
-        enableGame(getString(R.string.RPJenabled_pref_key));
-    }
-
-    private void enableGame(String key){
-        Boolean RPJenabled = getEnableGamesSharedPrefs().getBoolean(getString(R.string.RPJenabled_pref_key), false);
-
-        if (!RPJenabled) {
-            Log.d("!!!!GAME-FLOW", "enableRPJ");
-            SharedPreferences.Editor editor = getEnableGamesSharedPrefs().edit();
-            editor.putBoolean(key, true);
-            editor.apply();
-            editor.commit();
-        }
-    }*/
 }
