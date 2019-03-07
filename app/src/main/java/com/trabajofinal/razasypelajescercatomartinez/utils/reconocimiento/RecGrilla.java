@@ -1,11 +1,14 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.reconocimiento;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +17,7 @@ import com.trabajofinal.razasypelajescercatomartinez.R;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecGrilla extends AppCompatActivity {
@@ -26,6 +30,9 @@ public class RecGrilla extends AppCompatActivity {
     private TextView raza;
     private String pelaje;
     private String aux;
+
+
+    protected List list=new ArrayList();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,28 +47,41 @@ public class RecGrilla extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        caballosProvider = new CaballosProvider(this);
-        caballos= caballosProvider.getHorsesList();
-
-        iv= findViewById(R.id.image1);
-        caballo = caballos.get(1);
-        raza = findViewById(R.id.textView1);
-        pelaje = caballo.getPelaje();
-        aux = caballo.getRaza();
-        aux= aux +" "+ pelaje;
-        raza.setText(aux);
-        String i = caballo.getImagen();
-        Drawable draw = getResources().getDrawable(getResources().getIdentifier(i,"drawable",getPackageName()));
-        iv.setImageDrawable(draw);
-
     }
 
-    public void sonar(Integer i){
-        new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caballo.getAudio();
+   /* public RecGrilla(RecoActivity context) {
+        super(context);
+    }*/
+
+    protected void manageList(String img, CaballoModel horse, ArrayList<Integer> sounds) {
+        list.add( new RecGrillaItem(
+                img, horse.getName().toUpperCase(), sounds
+        ) );
+    }
+    protected void fulfillItems() {
+        list = new ArrayList<>();
+        CaballosProvider horsesProvider = new CaballosProvider(this);
+        List<CaballoModel> horses = horsesProvider.getHorsesList();
+        for (int i = 0; i < horses.size(); i++) {
+            CaballoModel horse = horses.get(i);
+            String img =horse.getImagen();
+            ArrayList<Integer> sounds;
+            if (listeningToFemAudio()){
+                sounds = horse.getFemSounds();
+            } else {
+                sounds = horse.getMaleSounds();
             }
-        };
+            manageList(img, horse, sounds);
+        }
     }
+    public void prepareView() {
+        // fulfill gridItems
+        fulfillItems();
+        // get view and set custom adapter
+        GridView gridView = findViewById(R.id.grilla);
+        RecGrillaAdapter customGridAdapter = new RecGrillaAdapter(this, R.layout.activity_rec_grilla_item, list);
+        gridView.setAdapter(customGridAdapter);
+    }
+
+
 }
