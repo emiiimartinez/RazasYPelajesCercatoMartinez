@@ -53,16 +53,29 @@ public class JugarII extends InteraccionManager {
 
     private void fillHorsesImgViewsArrayL2() {
         imageViews = new ArrayList<>();
-        imageViews.add((ImageView) this.context.findViewById(R.id.caballo1));
-        imageViews.add((ImageView) this.context.findViewById(R.id.caballo2));
-        imageViews.add((ImageView) this.context.findViewById(R.id.caballo3));
-        imageViews.add((ImageView) this.context.findViewById(R.id.caballo4));
+        imageViews = new ArrayList<>();
+        ImageView img= this.context.findViewById(R.id.caballo1);
+        img.setBackgroundResource(R.drawable.blue_border);
+        imageViews.add(img);
+        img= this.context.findViewById(R.id.caballo2);
+        img.setBackgroundResource(R.drawable.blue_border);
+        imageViews.add(img);
+        img= this.context.findViewById(R.id.caballo3);
+        img.setBackgroundResource(R.drawable.blue_border);
+        imageViews.add(img);
+        img= this.context.findViewById(R.id.caballo4);
+        img.setBackgroundResource(R.drawable.blue_border);
+        imageViews.add(img);
     }
 
     private void fillHorsesImgViewsArrayL1() {
         imageViews = new ArrayList<>();
-        imageViews.add((ImageView) this.context.findViewById(R.id.caballo2));
-        imageViews.add((ImageView) this.context.findViewById(R.id.caballo3));
+        ImageView img= this.context.findViewById(R.id.caballo2);
+        img.setBackgroundResource(R.drawable.blue_border);
+        imageViews.add(img);
+        img= this.context.findViewById(R.id.caballo3);
+        img.setBackgroundResource(R.drawable.blue_border);
+        imageViews.add(img);
     }
 
     @Override

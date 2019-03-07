@@ -1,6 +1,7 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.interacciones;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.View;
@@ -89,16 +90,28 @@ public class JugarIP extends InteraccionManager {
 
     private void fillHorsesTextViewsArrayL2() {
         horsesTextViews = new ArrayList<>();
-        horsesTextViews.add((TextView) this.context.findViewById(R.id.texto1));
-        horsesTextViews.add((TextView) this.context.findViewById(R.id.texto2));
-        horsesTextViews.add((TextView) this.context.findViewById(R.id.texto3));
-        horsesTextViews.add((TextView) this.context.findViewById(R.id.texto4));
+        TextView text=this.context.findViewById(R.id.texto1);
+        text.setBackgroundResource(R.drawable.blue_border);
+        horsesTextViews.add(text);
+        text= this.context.findViewById(R.id.texto2);
+        text.setBackgroundResource(R.drawable.blue_border);
+        horsesTextViews.add(text);
+        text= this.context.findViewById(R.id.texto3);
+        text.setBackgroundResource(R.drawable.blue_border);
+        horsesTextViews.add(text);
+        text= this.context.findViewById(R.id.texto4);
+        text.setBackgroundResource(R.drawable.blue_border);
+        horsesTextViews.add(text);
     }
 
     private void fillHorsesTextViewsArrayL1() {
         horsesTextViews = new ArrayList<>();
-        horsesTextViews.add((TextView) this.context.findViewById(R.id.texto2));
-        horsesTextViews.add((TextView) this.context.findViewById(R.id.texto3));
+        TextView text=this.context.findViewById(R.id.texto2);
+        text.setBackgroundResource(R.drawable.blue_border);
+        horsesTextViews.add(text);
+        text=this.context.findViewById(R.id.texto3);
+        text.setBackgroundResource(R.drawable.blue_border);
+        horsesTextViews.add(text);
     }
 
     @Override

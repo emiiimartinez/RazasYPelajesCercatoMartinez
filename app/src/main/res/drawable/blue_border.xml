@@ -4,7 +4,6 @@
     <stroke android:width="2dp" android:color="#9DD9D9" />
 
     <!-- INTERNAL BG -->
-    <solid android:color="@color/colorBg" />
 
     <corners android:radius="0dp" />
 

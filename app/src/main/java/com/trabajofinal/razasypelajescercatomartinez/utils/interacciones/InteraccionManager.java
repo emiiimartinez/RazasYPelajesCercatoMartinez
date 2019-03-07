@@ -123,6 +123,7 @@ public abstract class InteraccionManager {
     protected void validateView(){
         ArrayList<Integer> sounds = new ArrayList<>();
         if ( viewValidationCondition() ){
+
             sounds.add(AudioProvider.INSTANCE.getSoundAt("success"));
             this.context.incrementAciertos();
         } else {
