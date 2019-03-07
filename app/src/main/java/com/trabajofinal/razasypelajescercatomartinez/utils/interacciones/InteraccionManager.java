@@ -91,9 +91,9 @@ public abstract class InteraccionManager {
         for (int i = 0; i < views.size(); i++) {
             CaballoModel randomHorseCruza = caballosProvider.randomHorseCruza();
             // we dont wanna have the same horse attribute twice
-            while(this.isAlreadyInViews( randomHorseCruza, views) ){
+          /*  while(this.isAlreadyInViews( randomHorseCruza, views) ){
                 randomHorseCruza = caballosProvider.randomHorseCruza();
-            }
+            }*/
             views.get(i).setTag(randomHorseCruza);
             manageViewsListItem(randomHorseCruza, i);
         }
@@ -117,6 +117,9 @@ public abstract class InteraccionManager {
             return (((CaballoModel)view.getTag()).getPelaje())
                     .equals(horse.getPelaje());
         }else if(searchingForPotrillo){
+            Log.d("POTRIILO",horse.getPadres());
+            Log.d("potrillo",((CaballoModel)view.getTag()).getPadres());
+
             return(((CaballoModel)view.getTag()).getPadres()).equals(horse.getPadres());
         }
         return (((CaballoModel)view.getTag()).getName())
