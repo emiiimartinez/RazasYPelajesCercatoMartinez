@@ -1,7 +1,6 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.interacciones;
 
-import android.content.Context;
-import android.content.Intent;
+
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.trabajofinal.razasypelajescercatomartinez.JugarActivity;
-import com.trabajofinal.razasypelajescercatomartinez.MainActivity;
 import com.trabajofinal.razasypelajescercatomartinez.R;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
@@ -85,7 +83,17 @@ public abstract class InteraccionManager {
             manageViewsListItem(randomHorse, i);
         }
     }
-
+    public void showRespuestasCruza(List<? extends View> views) {
+        for (int i = 0; i < views.size(); i++) {
+            CaballoModel randomHorseCruza = caballosProvider.randomHorseCruza();
+            // we dont wanna have the same horse attribute twice
+            while(this.isAlreadyInViews( randomHorseCruza, views) ){
+                randomHorseCruza = caballosProvider.randomHorseCruza();
+            }
+            views.get(i).setTag(randomHorseCruza);
+            manageViewsListItem(randomHorseCruza, i);
+        }
+    }
     protected boolean isAlreadyInViews(CaballoModel horse, List<? extends View> views) {
         boolean cond = false;
         for (View view : views) {
@@ -199,6 +207,8 @@ public abstract class InteraccionManager {
     public abstract void resetViewsTags();
 
     public abstract void showPossibleAnswers();
+
+    public abstract void showRespuestasCruza();
 
     protected abstract void resetSoundImageToRegular();
 

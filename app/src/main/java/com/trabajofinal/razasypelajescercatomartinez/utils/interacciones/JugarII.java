@@ -72,8 +72,14 @@ public class JugarII extends InteraccionManager {
     @Override
     public void showWhatToLookFor() {
       super.showWhatToLookFor();
-      setImageResource(horseToFindImgView, caballoAcierto.getImagen());
+        setImageResource(horseToFindImgView, caballoAcierto.getPotrillo());
     }
+
+    @Override
+    public void showRespuestasCruza() {
+        showRespuestasCruza(imageViews);
+    }
+
     @Override
     public void showPossibleAnswers() {
         showPossibleAnswers(imageViews);
@@ -87,7 +93,7 @@ public class JugarII extends InteraccionManager {
     @Override
     protected void manageViewsListItem(CaballoModel randomHorse, int i) {
         ImageView imageView = imageViews.get(i);
-        setImageResource(imageView, randomHorse.getImagen());
+        setImageResource(imageView, randomHorse.getPadres());
     }
 
     @Override
@@ -97,7 +103,7 @@ public class JugarII extends InteraccionManager {
             Collections.shuffle(imageViews);
             ImageView randomImgView = imageViews.get(0);
             randomImgView.setTag(caballoAcierto);
-            setImageResource(randomImgView, caballoAcierto.getImagen());
+            setImageResource(randomImgView, caballoAcierto.getPadres());
         }
 
     }

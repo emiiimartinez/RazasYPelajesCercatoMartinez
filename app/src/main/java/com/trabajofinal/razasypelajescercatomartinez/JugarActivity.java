@@ -207,7 +207,12 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void horseToFind() {
-        caballoCorrecto = caballosProvider.randomHorse();
+        if(playingCruza()){
+            caballoCorrecto = caballosProvider.randomHorseCruza();
+        }
+        else {
+            caballoCorrecto = caballosProvider.randomHorse();
+        }
         // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
         // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
         if (playingRazasYPelajesJuntos()) {
@@ -226,11 +231,11 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private Boolean searchingForType() {
-        return caballosProvider.isAHorseType(whatToLookFor);
+        return caballosProvider.isAHorseRaza(whatToLookFor);
     }
 
     private Boolean searchingForHairType() {
-        return caballosProvider.isAHorseHairType(whatToLookFor);
+        return caballosProvider.isAHorsePelaje(whatToLookFor);
     }
 
     private Boolean searchingForFullName() {
@@ -284,7 +289,13 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         // show in ui
         interaccionManager.showWhatToLookFor();
         // populate img views with random imgs
-        interaccionManager.showPossibleAnswers();
+        if(playingCruza()){
+            interaccionManager.showRespuestasCruza();
+        }
+        else{
+            interaccionManager.showPossibleAnswers();
+        }
+
         // put a random img view with the answer img ONLY if it isn't shown yet
         interaccionManager.putAnswerInGame();
     }
