@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".utils.reconocimiento.RecGrillaItem"></activity>
         <activity android:name=".utils.reconocimiento.RecLista" />
         <activity android:name=".utils.reconocimiento.RecGrilla" />
         <activity android:name=".ReconocimientoActivity" />
