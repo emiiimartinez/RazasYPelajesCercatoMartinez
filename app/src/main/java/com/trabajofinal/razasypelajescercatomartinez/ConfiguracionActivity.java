@@ -29,21 +29,17 @@ public class ConfiguracionActivity extends AppCompatActivity {
         audioSwitch = findViewById(R.id.audioSwitch);
         //recoFilterRadioGroup = findViewById(R.id.filterViewModeRadioGroup);
         interactionRadioGroup = findViewById(R.id.interactionRadioGroup);
-       // minijuegoRadioGroup = findViewById(R.id.minijuegoRadioGroup);
+        minijuegoRadioGroup = findViewById(R.id.minijuegoRadioGroup);
         recoViewModeRadioGroup = findViewById(R.id.recoViewModeRadioGroup);
 
         // set all values
         SharedPreferences configPreferences = getSharedPreferences(getString(R.string.config_preferences),Context.MODE_PRIVATE);
-        levelSwitch.setChecked(configPreferences
-                .getBoolean(getString(R.string.level2_pref_key), false));
-        audioSwitch.setChecked(configPreferences
-                .getBoolean(getString(R.string.fem_audio_pref_key), false));
-     //   recoFilterRadioGroup.check(configPreferences.getInt(getString(R.string.reco_filter_key), R.id.r));
-        interactionRadioGroup.check(configPreferences
-                .getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn));
-      //  mini.check(configPreferences.getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn));
-        recoViewModeRadioGroup.check(configPreferences
-                .getInt(getString(R.string.reco_view_mode_pref_key), R.id.listRadioBtn));
+        levelSwitch.setChecked(configPreferences.getBoolean(getString(R.string.level2_pref_key), false));
+        audioSwitch.setChecked(configPreferences.getBoolean(getString(R.string.fem_audio_pref_key), false));
+     // recoFilterRadioGroup.check(configPreferences.getInt(getString(R.string.reco_filter_key), R.id.r));
+        interactionRadioGroup.check(configPreferences.getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn));
+        minijuegoRadioGroup.check(configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn));
+        recoViewModeRadioGroup.check(configPreferences.getInt(getString(R.string.reco_view_mode_pref_key), R.id.listRadioBtn));
     }
 
     public void onAccept(View view) {
@@ -51,7 +47,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean(getString(R.string.fem_audio_pref_key), audioSwitch.isChecked());
         editor.putBoolean(getString(R.string.level2_pref_key), levelSwitch.isChecked());
-       // editor.putInt(getString(R.string.reco_filter_key), recoFilterRadioGroup.getCheckedRadioButtonId());
+       //editor.putInt(getString(R.string.reco_filter_key), recoFilterRadioGroup.getCheckedRadioButtonId());
         editor.putInt(getString(R.string.interaction_pref_key), interactionRadioGroup.getCheckedRadioButtonId());
         editor.putInt(getString(R.string.reco_view_mode_pref_key), recoViewModeRadioGroup.getCheckedRadioButtonId());
         editor.apply();
