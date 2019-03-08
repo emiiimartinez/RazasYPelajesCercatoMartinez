@@ -9,14 +9,9 @@ import java.util.ArrayList;
 
 public class RecListaItem extends AppCompatActivity {
 
-    private String nombre, imagen, texto;
-    private ArrayList<Integer> sonido;
+    String nombre, imagen, texto;
+    ArrayList<Integer> sonido;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rec_grilla_item);
-    }
     public RecListaItem(String nombre, String imagen, ArrayList<Integer> sonido, String texto) {
 
         this.nombre = nombre;

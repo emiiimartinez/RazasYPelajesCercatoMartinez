@@ -9,56 +9,47 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import com.trabajofinal.razasypelajescercatomartinez.R;
 import java.util.List;
 
 public class RecGrillaAdapter extends ArrayAdapter<RecGrillaItem> {
 
     Context context;
-    int layoutResourceId;
-    List<RecGrillaItem> data;
+    int resource;
+    List<RecGrillaItem> items;
 
-    public RecGrillaAdapter(Context context, int resource, List<RecGrillaItem> objects) {
-        super(context, resource, objects);
+    public RecGrillaAdapter(Context context, int resource, List<RecGrillaItem> lista) {
+        super(context, resource, lista);
 
         this.context = context;
-        this.layoutResourceId = resource;
-        this.data = objects;
-    }
-
-    static class DataHolder{
-        Button soundImgView;
-        ImageView horseImageView;
-        TextView horseTextView;
+        this.resource = resource;
+        this.items = lista;
     }
 
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        DataHolder dataHolder;
+
+        RecItem dato;
 
         if (convertView == null){
             LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
-            convertView = layoutInflater.inflate(layoutResourceId, parent, false);
-            dataHolder = new DataHolder();
-
-            dataHolder.horseImageView = convertView.findViewById(R.id.image1);
-            dataHolder.soundImgView = convertView.findViewById(R.id.button1);
-            dataHolder.horseTextView = convertView.findViewById(R.id.textView1);
-            convertView.setTag(dataHolder);
+            convertView = layoutInflater.inflate(resource, parent, false);
+            dato = new RecItem();
+            dato.nombre = convertView.findViewById(R.id.textView1);
+            dato.sonido = convertView.findViewById(R.id.button1);
+            dato.imagen = convertView.findViewById(R.id.image1);
+           convertView.setTag(dato);
         }else{
-            dataHolder = (DataHolder) convertView.getTag();
+            dato = (RecItem) convertView.getTag();
         }
-        RecGrillaItem listItem = data.get(position);
-        dataHolder.horseTextView.setText(listItem.getNombre());
+        RecGrillaItem listItem = items.get(position);
+        dato.nombre.setText(listItem.getNombre());
         Drawable draw = context.getResources().getDrawable(context.getResources().getIdentifier(listItem.imagen,"drawable",context.getPackageName()));
+        dato.imagen.setImageDrawable(draw);
+        dato.imagen.setTag(listItem.getImagen());
+        dato.sonido.setTag(listItem.getSonido());
 
-        dataHolder.horseImageView.setImageDrawable(draw);
-        dataHolder.horseImageView.setTag(listItem.getImagen());
-        dataHolder.soundImgView.setTag(listItem.getSonido());
         return convertView;
     }
 }
