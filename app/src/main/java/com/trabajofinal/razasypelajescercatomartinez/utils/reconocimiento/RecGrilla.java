@@ -1,7 +1,10 @@
 package com.trabajofinal.razasypelajescercatomartinez.utils.reconocimiento;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,15 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecGrilla extends AppCompatActivity {
-    private CaballoModel caballo;
-    private CaballosProvider caballosProvider;
-    private List<CaballoModel> caballos;
+
     private Button volver;
-    private Button sonido;
-    private ImageView iv;
-    private TextView raza;
-    private String pelaje;
-    private String aux;
 
 
     protected List list=new ArrayList();;
@@ -52,7 +48,14 @@ public class RecGrilla extends AppCompatActivity {
    /* public RecGrilla(RecoActivity context) {
         super(context);
     }*/
-
+   private SharedPreferences getConfigSharedPrefs() {
+        return getSharedPreferences(getString(R.string.config_preferences), Context.MODE_PRIVATE);
+    }
+   public Boolean listeningToFemAudio() {
+       Resources res = getResources();
+       Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
+       return femAudioSwitchPref;
+   }
     protected void manageList(String img, CaballoModel horse, ArrayList<Integer> sounds) {
         list.add( new RecGrillaItem(
                 img, horse.getName().toUpperCase(), sounds
