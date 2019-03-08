@@ -49,8 +49,8 @@ public class RecLista extends AppCompatActivity {
         Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
         return femAudioSwitchPref;
     }
-    protected void manageList(String img, String nombre, ArrayList<Integer> sounds, String texto) {
-        lista.add( new RecListaItem(img, nombre, sounds, texto) );
+    protected void manageList(String nombre, String img, ArrayList<Integer> sounds, String texto) {
+        lista.add( new RecListaItem(nombre, img, sounds, texto) );
     }
     protected void fulfillItems() {
         lista = new ArrayList<>();
