@@ -50,7 +50,13 @@ public class RecGrilla extends AppCompatActivity {
    private SharedPreferences getConfigSharedPrefs() {
         return getSharedPreferences(getString(R.string.config_preferences), Context.MODE_PRIVATE);
     }
-   public Boolean listeningToFemAudio() {
+
+    public Boolean filtrado() {
+        Integer rpj = getConfigSharedPrefs().getInt(getString(R.string.reco_filter_key), R.id.razaRadioBtn);
+        return (rpj== R.id.razaRadioBtn);
+    }
+
+    public Boolean listeningToFemAudio() {
        Resources res = getResources();
        Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
        return femAudioSwitchPref;
@@ -58,7 +64,10 @@ public class RecGrilla extends AppCompatActivity {
     protected void agregarLista(String img, String nombre, ArrayList<Integer> sonido) {
         list.add( new RecGrillaItem(img, nombre, sonido) );
     }
-    protected void agregarLista() {
+    protected void agregarLista(String potrillo, String padres) {
+        list.add( new RecGrillaItem(potrillo, padres) );
+    }
+    protected void cargarItems() {
         list = new ArrayList<>();
         CaballosProvider horsesProvider = new CaballosProvider(this);
         List<CaballoModel> caballos = horsesProvider.getHorsesList();
@@ -75,12 +84,33 @@ public class RecGrilla extends AppCompatActivity {
             agregarLista(img, nombre, sonido);
         }
     }
-    public void prepareView() {
+    protected void cargarCruza(){
+        list = new ArrayList<>();
+        CaballosProvider provider = new CaballosProvider(this);
+        List<CaballoModel> potrillos = provider.getPotrillosList();
+        for (int i = 0; i < potrillos.size(); i++) {
+            CaballoModel potrillo = potrillos.get(i);
+            String pot =potrillo.getPotrillo();
+            String padres =potrillo.getPadres();
 
-        agregarLista();
-        GridView gridView = findViewById(R.id.grilla);
-        RecGrillaAdapter customGridAdapter = new RecGrillaAdapter(this, R.layout.activity_rec_grilla_item, list);
-        gridView.setAdapter(customGridAdapter);
+            agregarLista(pot, padres);
+        }
+    }
+
+    public void prepareView() {
+        if(filtrado()) {
+            cargarItems();
+            GridView gridView = findViewById(R.id.grilla);
+            RecGrillaAdapter grillaAdapter = new RecGrillaAdapter(this, R.layout.activity_rec_grilla_item, list);
+            gridView.setAdapter(grillaAdapter);
+        }else{
+
+            cargarCruza();
+            GridView listView = findViewById(R.id.grilla);
+            RecListaCruza grillaAdapter = new RecListaCruza(this, R.layout.activity_rec_grilla_cruza, list);
+            listView.setAdapter(grillaAdapter);
+
+        }
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void onClickCaballo(View view) {

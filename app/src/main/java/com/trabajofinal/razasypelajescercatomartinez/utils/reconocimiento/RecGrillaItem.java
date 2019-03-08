@@ -16,8 +16,7 @@ import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProv
 import java.util.ArrayList;
 
 public class RecGrillaItem extends AppCompatActivity {
-    String imagen;
-    String nombre;
+    String imagen, nombre, potrillo, padre;
     ArrayList<Integer> sonido;
 
     public RecGrillaItem(String imagen, String nombre, ArrayList<Integer> sonido) {
@@ -25,7 +24,11 @@ public class RecGrillaItem extends AppCompatActivity {
         this.nombre = nombre;
         this.sonido = sonido;
     }
+    public RecGrillaItem(String potrillo, String padre) {
 
+        this.potrillo = potrillo;
+        this.padre = padre;
+    }
     public String getImagen() {
 
         return imagen;
