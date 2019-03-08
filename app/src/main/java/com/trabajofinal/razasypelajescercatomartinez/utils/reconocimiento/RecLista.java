@@ -44,35 +44,37 @@ public class RecLista extends AppCompatActivity {
     private SharedPreferences getConfigSharedPrefs() {
         return getSharedPreferences(getString(R.string.config_preferences), Context.MODE_PRIVATE);
     }
+
     public Boolean listeningToFemAudio() {
         Resources res = getResources();
         Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
         return femAudioSwitchPref;
     }
-    protected void manageList(String nombre, String img, ArrayList<Integer> sounds, String texto) {
-        lista.add( new RecListaItem(nombre, img, sounds, texto) );
+
+    protected void agregarLista(String nombre, String img, ArrayList<Integer> sonido, String texto) {
+        lista.add( new RecListaItem(nombre, img, sonido, texto) );
     }
-    protected void fulfillItems() {
+
+    protected void cargarItems() {
         lista = new ArrayList<>();
-        CaballosProvider horsesProvider = new CaballosProvider(this);
-        List<CaballoModel> horses = horsesProvider.getHorsesList();
-        for (int i = 0; i < horses.size(); i++) {
-            CaballoModel horse = horses.get(i);
-            String img =horse.getImagen();
-            String nombre = horse.getName();
-            ArrayList<Integer> sounds;
+        CaballosProvider provider = new CaballosProvider(this);
+        List<CaballoModel> caballos = provider.getHorsesList();
+        for (int i = 0; i < caballos.size(); i++) {
+            CaballoModel caballo = caballos.get(i);
+            String img =caballo.getImagen();
+            String nombre = caballo.getName();
+            ArrayList<Integer> sonido;
             if (listeningToFemAudio()){
-                sounds = horse.getFemSounds();
+                sonido = caballo.getFemSounds();
             } else {
-                sounds = horse.getMaleSounds();
+                sonido = caballo.getMaleSounds();
             }
-            manageList(nombre, img, sounds, nombre);
+            agregarLista(nombre, img, sonido, nombre);
         }
     }
     public void prepareView() {
-        // fulfill gridItems
-        fulfillItems();
-        // get view and set custom adapter
+
+        cargarItems();
         ListView listView = findViewById(R.id.lista);
         RecListaAdapter listAdapater = new RecListaAdapter(this, R.layout.activity_rec_lista_item, lista);
         listView.setAdapter(listAdapater);
