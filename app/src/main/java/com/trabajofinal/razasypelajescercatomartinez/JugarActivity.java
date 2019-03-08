@@ -58,6 +58,8 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     public void prepareCruza() {
         setContentView(R.layout.activity_jugar_ii);
         interaccionManager = new JugarII(this, playingLevel2());
+        // horses provider
+        caballosProvider = new CaballosProvider(this);
     }
 
     public void prepareLayout() {
@@ -148,7 +150,7 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
     public Boolean playingRazasYPelajesJuntos() {
         Integer minijuegoPref = getConfigSharedPrefs().getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
-        return minijuegoPref == R.id.RPJRadioBtn;
+        return (minijuegoPref == R.id.RPJRadioBtn);
     }
 
     public Boolean playingCruza() {
@@ -250,13 +252,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
     public Boolean gameLost() {
         return aciertos < 3 && rondas == 5;
-    }
-
-
-    public void makeToast(String string) {
-        Toast toast = Toast.makeText(this, string, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 40);
-        toast.show();
     }
 
      public void showTrophy() {
