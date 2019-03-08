@@ -52,30 +52,29 @@ public class RecGrilla extends AppCompatActivity {
        Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
        return femAudioSwitchPref;
    }
-    protected void manageList(String img, String nombre, ArrayList<Integer> sounds) {
-        list.add( new RecGrillaItem(img, nombre, sounds) );
+    protected void agregarLista(String img, String nombre, ArrayList<Integer> sonido) {
+        list.add( new RecGrillaItem(img, nombre, sonido) );
     }
-    protected void fulfillItems() {
+    protected void agregarLista() {
         list = new ArrayList<>();
         CaballosProvider horsesProvider = new CaballosProvider(this);
-        List<CaballoModel> horses = horsesProvider.getHorsesList();
-        for (int i = 0; i < horses.size(); i++) {
-            CaballoModel horse = horses.get(i);
-            String img =horse.getImagen();
-            String nombre = horse.getName();
-            ArrayList<Integer> sounds;
+        List<CaballoModel> caballos = horsesProvider.getHorsesList();
+        for (int i = 0; i < caballos.size(); i++) {
+            CaballoModel caballo = caballos.get(i);
+            String img =caballo.getImagen();
+            String nombre = caballo.getName();
+            ArrayList<Integer> sonido;
             if (listeningToFemAudio()){
-                sounds = horse.getFemSounds();
+                sonido = caballo.getFemSounds();
             } else {
-                sounds = horse.getMaleSounds();
+                sonido = caballo.getMaleSounds();
             }
-            manageList(img, nombre, sounds);
+            agregarLista(img, nombre, sonido);
         }
     }
     public void prepareView() {
-        // fulfill gridItems
-        fulfillItems();
-        // get view and set custom adapter
+
+        agregarLista();
         GridView gridView = findViewById(R.id.grilla);
         RecGrillaAdapter customGridAdapter = new RecGrillaAdapter(this, R.layout.activity_rec_grilla_item, list);
         gridView.setAdapter(customGridAdapter);
