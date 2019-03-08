@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.trabajofinal.razasypelajescercatomartinez.R;
@@ -29,7 +30,8 @@ public class RecGrillaAdapter extends ArrayAdapter<RecGrillaItem> {
     }
 
     static class DataHolder{
-        ImageView horseImageView, soundImgView;
+        Button soundImgView;
+        ImageView horseImageView;
         TextView horseTextView;
     }
 
@@ -52,7 +54,9 @@ public class RecGrillaAdapter extends ArrayAdapter<RecGrillaItem> {
         }
         RecGrillaItem listItem = data.get(position);
         dataHolder.horseTextView.setText(listItem.getNombre());
-        dataHolder.horseImageView.setImageDrawable(listItem.getImagenDrawable());
+        Drawable draw = context.getResources().getDrawable(context.getResources().getIdentifier(listItem.imagen,"drawable",context.getPackageName()));
+
+        dataHolder.horseImageView.setImageDrawable(draw);
         dataHolder.horseImageView.setTag(listItem.getImagen());
         dataHolder.soundImgView.setTag(listItem.getSonido());
         return convertView;

@@ -43,6 +43,7 @@ public class RecGrilla extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        prepareView();
     }
 
    /* public RecGrilla(RecoActivity context) {
@@ -56,10 +57,8 @@ public class RecGrilla extends AppCompatActivity {
        Boolean femAudioSwitchPref = getConfigSharedPrefs().getBoolean(getString(R.string.fem_audio_pref_key), res.getBoolean(R.bool.pref_default_audio));
        return femAudioSwitchPref;
    }
-    protected void manageList(String img, CaballoModel horse, ArrayList<Integer> sounds) {
-        list.add( new RecGrillaItem(
-                img, horse.getName().toUpperCase(), sounds
-        ) );
+    protected void manageList(String img, String nombre, ArrayList<Integer> sounds) {
+        list.add( new RecGrillaItem(img, nombre, sounds) );
     }
     protected void fulfillItems() {
         list = new ArrayList<>();
@@ -68,13 +67,14 @@ public class RecGrilla extends AppCompatActivity {
         for (int i = 0; i < horses.size(); i++) {
             CaballoModel horse = horses.get(i);
             String img =horse.getImagen();
+            String nombre = horse.getName();
             ArrayList<Integer> sounds;
             if (listeningToFemAudio()){
                 sounds = horse.getFemSounds();
             } else {
                 sounds = horse.getMaleSounds();
             }
-            manageList(img, horse, sounds);
+            manageList(img, nombre, sounds);
         }
     }
     public void prepareView() {

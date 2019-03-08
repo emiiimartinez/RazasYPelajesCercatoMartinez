@@ -16,11 +16,6 @@ public class RecGrillaItem extends AppCompatActivity {
     String nombre;
     ArrayList<Integer> sonido;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rec_grilla_item);
-    }
     public RecGrillaItem(String imagen, String nombre, ArrayList<Integer> sonido) {
         this.imagen = imagen;
         this.nombre = nombre;
@@ -32,7 +27,7 @@ public class RecGrillaItem extends AppCompatActivity {
         return imagen;
     }
     public Drawable getImagenDrawable() {
-       return getResources().getDrawable(getResources().getIdentifier(imagen,"drawable",getPackageName()));
+       return getResources().getDrawable(getResources().getIdentifier(this.imagen,"drawable",getPackageName()));
     }
     public String getNombre() {
 
