@@ -39,7 +39,8 @@ public class CaballosProvider extends AppCompatActivity {
                 String raza = horseJSON.getString("breed");
                 String pelaje = horseJSON.getString("fur");
                 String imagen = horseJSON.getString("photo");
-                horse = new CaballoModel(raza, pelaje,imagen);
+                String texto = horseJSON.getString("text");
+                horse = new CaballoModel(raza, pelaje,imagen,texto);
                 Map audio = new HashMap();
                 audio.put("f", new Integer[]{
                         AudioProvider.INSTANCE.getFemSoundAt(raza),

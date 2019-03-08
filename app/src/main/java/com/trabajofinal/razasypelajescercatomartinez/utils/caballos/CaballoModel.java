@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CaballoModel {
-    private String raza, pelaje,potrillo,padres;
-    private String imagen;
+    private String raza, pelaje,potrillo,padres,imagen,texto;
     private Map<String, Integer[]> audio;
 
     public CaballoModel() {
@@ -16,10 +15,11 @@ public class CaballoModel {
         this.audio = new HashMap<>();
     }
 
-    public CaballoModel(String raza, String pelaje, String imagen) {
+    public CaballoModel(String raza, String pelaje, String imagen, String texto) {
         this.raza = raza;
         this.pelaje = pelaje;
         this.imagen = imagen;
+        this.texto=texto;
     }
     public CaballoModel(String potrillo, String padres) {
         this.potrillo = potrillo;
@@ -49,6 +49,13 @@ public class CaballoModel {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+    public void setTexto(String texto) {
+        this.texto = texto;
     }
 
     public Map<String, Integer[]> getAudio() { return audio; }

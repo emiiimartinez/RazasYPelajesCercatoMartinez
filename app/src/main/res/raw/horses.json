@@ -3,138 +3,161 @@
     "name": "Amapola",
     "breed": "Petiso Argentino",
     "fur": "Rosillo",
-    "photo": "horse_01"
+    "photo": "horse_01",
+    "text":"PETISO ARGENTINO – Raza de Caballos que nació de la cruza de petisos importados con caballos de otras razas, principalmente autóctonas. De cabeza mediana, orejas pequeñas, cuerpo armonioso y profundo; de acción ágil y suelta, temperamento activo y brioso.En la actualidad, se usa para actividades hípicas con niños y niñas ."
   },
   {
     "name": "Ambar",
     "breed": "Mestizo Cruza Arabe",
     "fur": "Alazan Tostado",
-    "photo": "horse_02"
+    "photo": "horse_02",
+    "text":"MESTIZO CRUZA ÁRABE: Resultante de un progenitor MESTIZO y uno ÁRABE.   RAZA MESTIZO - Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia.RAZA ÁRABE - Raza de Caballos con una cabeza característica y la cola siempre en alto. El caballo árabe es una de las razas de caballos mejor reconocidas en el mundo. Su reputación denota su inteligencia, carácter fuerte y resistencia sobresaliente. Tienen menos huesos ya que tienen una costilla, un hueso lumbar y dos vértebras menos que los demás caballos.Su pelaje puede tener varias tonalidades. Encontramos caballos árabes en prácticamente todos los colores, aunque los más característicos o arraigados a este tipo de raza sean los Tordillos y Alazanes."
   },
   {
     "name": "Angola",
     "breed": "Spc",
     "fur": "Zainocolorado",
-    "photo": "horse_03"
+    "photo": "horse_03",
+    "text":"SANGRE PURO DE CARRERA (SPC) – Raza de Caballos con orígen el siglo XVIII en Inglaterra cuando yeguas madres inglesas fueron cruzadas con sementales árabes importados para crear corredores de distancia. Los pura sangre se destacan como caballos de carrera pero también se utilizan como caballos de equitación y otros entrenamientos ecuestres combinados, debido a su gran  condición atlética.El color de capa más común es el castaño pero también puede ser Zaino, Alazán o Tordillo en cuanto a su pelaje."
   },
   {
     "name": "Antu",
     "breed": "Mestizo",
     "fur": "Overo Zaino",
-    "photo": "horse_04"
+    "photo": "horse_04",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Bionda",
     "breed": "Mestizo",
     "fur": "Alazan Ruano",
-    "photo": "horse_05"
+    "photo": "horse_05",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Blanco",
     "breed": "Mestizo",
     "fur": "Blanco",
-    "photo": "horse_06"
+    "photo": "horse_06",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Bonita",
     "breed": "Mestizo Qh Con Criollo",
     "fur": "Overo Azulejo",
-    "photo": "horse_07"
+    "photo": "horse_07",
+    "text":"MESTIZO CUARTO DE MILLA: Resultante de un progenitor MESTIZO y uno CUARTO DE MILLA.    RAZA MESTIZO - Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia. RAZA CUARTO DE MILLA - Raza de Caballos -también conocida como Quarter Horses-  extremadamente sensible y tratable. Tiene la velocidad de los caballos de sangre caliente de sus ancestros y la estabilidad de los Caballos de sangre fría. Tiene un alto grado de inteligencia; es muy fácil de entrenar y de conducir, obediente. Su conformación a la vez elegante y fuerte, la armonía de sus andares y la docilidad propias del Cuarto de Milla hace que se lo considere el caballo más "versátil del mundo".Los caballos Quarter pueden presentarse en casi todos los pelajes, excepto los Pintados, los Albinos y los manchados como el Appaloosa. La capa más típica es la Alazán."
   },
   {
     "name": "Cacique",
     "breed": "Mestizo",
     "fur": "Alazan",
-    "photo": "horse_08"
+    "photo": "horse_08",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Candelaria",
     "breed": "Mestizo",
     "fur": "Tobiano",
-    "photo": "horse_09"
+    "photo": "horse_09",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Ciro",
     "breed": "Mestizo",
     "fur": "Tordillo Canela",
-    "photo": "horse_10"
+    "photo": "horse_10",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Felipe",
     "breed": "Mestizo",
     "fur": "Zaino",
-    "photo": "horse_11"
+    "photo": "horse_11",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Hualfín",
     "breed": "Criollo",
     "fur": "Picaso",
-    "photo": "horse_12"
+    "photo": "horse_12",
+    "text":"CRIOLLO – Raza de Caballos propio de Latinoamérica. Son animales de cuerpo robusto y musculoso, con unas extremidades fuertes y una abundante melena; de porte equilibrado, armónico y con el centro de gravedad bajo. De carácter autónomo y perseverante.No se aceptan en esta raza pelajes Tobiano o Pintado."
   },
   {
     "name": "Juana",
     "breed": "Cuarto De Milla",
     "fur": "Bayo",
-    "photo": "horse_13"
+    "photo": "horse_13",
+    "text":"CUARTO DE MILLA – Raza de Caballos conformada por la cruza de Pura Sangre Inglés y Mustang americano. De carácter tranquilo; es muy sensible y sociable. Veloces, dúctiles, de poca estatura y corpulentos: constitución musculosa, pecho grande y ancho.Muy amplia es la gama de pelaje, sólo no se aceptan los Pintados, los Manchados (Appaloosa) ni los Albinos."
   },
   {
     "name": "Mora",
     "breed": "Petiso Argentino",
     "fur": "Tordillo Moro",
-    "photo": "horse_14"
+    "photo": "horse_14",
+    "text":"PETISO ARGENTINO – Raza de Caballos que nació de la cruza de petisos importados con caballos de otras razas, principalmente autóctonas. De cabeza mediana, orejas pequeñas, cuerpo armonioso y profundo; de acción ágil y suelta, temperamento activo y brioso.En la actualidad, se usa para actividades hípicas con niños y niñas ."
   },
   {
     "name": "Muñeco",
     "breed": "Mestizo",
     "fur": "Overo Rosado",
-    "photo": "horse_15"
+    "photo": "horse_15",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Nala",
     "breed": "Mestizo",
     "fur": "Moro",
-    "photo": "horse_16"
+    "photo": "horse_16",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Pamperito",
     "breed": "Petiso Argentino",
     "fur": "Zaino",
-    "photo": "horse_17"
+    "photo": "horse_17",
+    "text":"PETISO ARGENTINO – Raza de Caballos que nació de la cruza de petisos importados con caballos de otras razas, principalmente autóctonas. De cabeza mediana, orejas pequeñas, cuerpo armonioso y profundo; de acción ágil y suelta, temperamento activo y brioso.En la actualidad, se usa para actividades hípicas con niños y niñas ."
   },
   {
     "name": "Pintada",
     "breed": "Mestizo",
     "fur": "Alazan Pintado",
-    "photo": "horse_18"
+    "photo": "horse_18",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Pochito",
     "breed": "Mestizo",
     "fur": "Zaino",
-    "photo": "horse_19"
+    "photo": "horse_19",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Primavera",
     "breed": "Silla Argentino",
     "fur": "Alazan",
-    "photo": "horse_20"
+    "photo": "horse_20",
+    "text":"SILLA ARGENTINO – Raza de Caballo cuyo orígen se remonta a 1941 cuando  el Anglo Argentino se transformó en raza para la AAFE (Asociación Argentina de Fomento Equino). A partir de 1982 comenzó a llamarse Silla Argentino. Es una animal muy parecido al SPC, aunque más robustos. Se destaca por su temperamento enérgico y vivaz. De volumen y peso medianos, su estructura fuerte y proporcionada le otorga una armonía apta para el deporte. Su pelaje, notablemente liso y sedoso, puede ser Alazán, Zaino o Tordillo pero no Pintado o Tobiano.",
   },
   {
     "name": "Tigre",
     "breed": "Criollo",
     "fur": "Bayo Gateado",
-    "photo": "horse_21"
+    "photo": "horse_21",
+    "text":"CRIOLLO – Raza de Caballos propio de Latinoamérica. Son animales de cuerpo robusto y musculoso, con unas extremidades fuertes y una abundante melena; de porte equilibrado, armónico y con el centro de gravedad bajo. De carácter autónomo y perseverante.No se aceptan en esta raza pelajes Tobiano o Pintado."
   },
   {
     "name": "Tupac",
     "breed": "Mestizo",
     "fur": "Zaino Oscuro",
-    "photo": "horse_22"
+    "photo": "horse_22",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   },
   {
     "name": "Zorzal",
     "breed": "Mestizo",
     "fur": "Tordillo",
-    "photo": "horse_23"
+    "photo": "horse_23",
+    "text":"MESTIZO – Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia."
   }
 ]

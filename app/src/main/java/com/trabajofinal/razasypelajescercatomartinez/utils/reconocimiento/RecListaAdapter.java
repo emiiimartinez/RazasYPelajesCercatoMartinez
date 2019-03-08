@@ -51,7 +51,7 @@ public class RecListaAdapter extends ArrayAdapter<RecListaItem> {
 
         RecListaItem listItem = items.get(pos);
         dato.nombre.setText(listItem.getNombre());
-        dato.texto.setText(listItem.getNombre()); //deberia ser la descripcion
+        dato.texto.setText(listItem.getTexto()); //deberia ser la descripcion
         int imageResource = context.getResources().getIdentifier(listItem.imagen, "drawable", context.getPackageName());
         Drawable draw = context.getResources().getDrawable(imageResource);
         dato.imagen.setImageDrawable(draw);
