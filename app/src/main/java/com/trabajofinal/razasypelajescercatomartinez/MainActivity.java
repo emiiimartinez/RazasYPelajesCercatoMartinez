@@ -24,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
         Boolean femAudio = configPreferences.getBoolean(getString(R.string.fem_audio_pref_key), false);
         Log.d("!!!!FEM-AUDIO? ", String.valueOf(femAudio));
 
+        Integer minijuegoRP = configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
+        Log.d("!!!!MINIJUEGO: ", String.valueOf(minijuegoRP == R.id.RPRadioBtn));
+        Integer minijuegoRPJ = configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
+        Log.d("!!!!MINIJUEGOB: ", String.valueOf(minijuegoRP == R.id.RPJRadioBtn));
+        Integer minijuegoC = configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
+        Log.d("!!!!MINIJUEGOC: ", String.valueOf(minijuegoRP == R.id.CRadioBtn));
+
         Integer viewMode = configPreferences.getInt(getString(R.string.reco_view_mode_pref_key), R.id.listRadioBtn);
         Log.d("!!!!GRID? ", String.valueOf(viewMode == R.id.gridRadioBtn));
     }
