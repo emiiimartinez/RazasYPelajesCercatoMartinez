@@ -14,25 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // testing config_preferences
-        Log.d("-----------------------", "Config Preferences -----------------------");
         SharedPreferences configPreferences = getSharedPreferences(getString(R.string.config_preferences),Context.MODE_PRIVATE);
 
-        Boolean playinLevel2 = configPreferences.getBoolean(getString(R.string.level2_pref_key), false);
-        Log.d("!!!!NIVEL2? ", String.valueOf(playinLevel2));
-
-        Boolean femAudio = configPreferences.getBoolean(getString(R.string.fem_audio_pref_key), false);
-        Log.d("!!!!FEM-AUDIO? ", String.valueOf(femAudio));
-
-        Integer minijuegoRP = configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
-        Log.d("!!!!MINIJUEGO: ", String.valueOf(minijuegoRP == R.id.RPRadioBtn));
-        Integer minijuegoRPJ = configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
-        Log.d("!!!!MINIJUEGOB: ", String.valueOf(minijuegoRP == R.id.RPJRadioBtn));
-        Integer minijuegoC = configPreferences.getInt(getString(R.string.minijuego_pref_key), R.id.RPRadioBtn);
-        Log.d("!!!!MINIJUEGOC: ", String.valueOf(minijuegoRP == R.id.CRadioBtn));
-
-        Integer viewMode = configPreferences.getInt(getString(R.string.reco_view_mode_pref_key), R.id.listRadioBtn);
-        Log.d("!!!!GRID? ", String.valueOf(viewMode == R.id.gridRadioBtn));
     }
     @Override
     protected void onPostResume() {
@@ -45,26 +28,25 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.aboutButton).setBackgroundResource(R.drawable.ic_info_regular);
         findViewById(R.id.configButton).setBackgroundResource(R.drawable.ic_config_regular);
     }
-    /** Accion Jugar Button */
+
     public void jugar(View view) {
         findViewById(R.id.jugarButton).setBackgroundResource(R.drawable.ic_jugar_click);
         Intent intent = new Intent(this, JugarActivity.class);
         startActivity(intent);
     }
 
-    /** Accion Reconocimiento Button */
     public void reconocimiento(View view) {
         findViewById(R.id.reconocimientoButton).setBackgroundResource(R.drawable.ic_reconocimiento_click);
         Intent intent = new Intent(this, ReconocimientoActivity.class);
         startActivity(intent);
     }
-    /** Accion Configuracion Button */
+
     public void configuracion(View view) {
         findViewById(R.id.configButton).setBackgroundResource(R.drawable.ic_config_click);
         Intent intent = new Intent(this, ConfiguracionActivity.class);
         startActivity(intent);
     }
-    /** Accion Info Button */
+
     public void about(View view) {
         findViewById(R.id.aboutButton).setBackgroundResource(R.drawable.ic_info_click);
         Intent intent = new Intent(this, AboutActivity.class);

@@ -33,7 +33,6 @@ public class ConfiguracionActivity extends AppCompatActivity {
         minijuegoRadioGroup = findViewById(R.id.minijuegoRadioGroup);
         recoViewModeRadioGroup = findViewById(R.id.recoViewModeRadioGroup);
 
-        // set all values
         SharedPreferences configPreferences = getSharedPreferences(getString(R.string.config_preferences),Context.MODE_PRIVATE);
         levelSwitch.setChecked(configPreferences.getBoolean(getString(R.string.level2_pref_key), false));
         audioSwitch.setChecked(configPreferences.getBoolean(getString(R.string.fem_audio_pref_key), false));

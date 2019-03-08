@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 public class RecItem {
     TextView nombre, texto;
-    ImageView imagen;
+    ImageView imagen, potrillo, padres;
     Button sonido;
 
 

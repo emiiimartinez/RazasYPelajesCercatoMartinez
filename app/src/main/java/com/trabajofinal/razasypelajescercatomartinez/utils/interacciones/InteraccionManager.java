@@ -72,7 +72,7 @@ public abstract class InteraccionManager {
     }
 
     public void showWhatToLookFor(){
-        Log.d("!!!WHAT-TO-LOOK-FOR", whatToLookFor);
+
     }
 
     public void showRespuestasPosibles(List<? extends View> views) {
@@ -135,39 +135,27 @@ public abstract class InteraccionManager {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // determine what to do
-        determineWhatToDo();
+        controller();
     }
 
-    protected void determineWhatToDo() {
+    protected void controller() {
         if (this.context.gameWon()){
-            // inform the user
-            //this.context.makeToast("¡Ganaste!");
-            // reset
             this.context.resetRondasyAciertos();
-            // if RP}
+
             if(!this.context.playingCruza()){
-                // enable RPJ in settings
-              //  this.context.enableRPJ();
-                // ask to retry game or play next
                 this.context.showNextLayout();
-                // confetti
-               this.context.startConfettiAnimation();
+                this.context.startConfettiAnimation();
+
             }else{
                 this.context.playRazasYPelajes();
-                     this.context.showTrophy();
-                     this.context.startTrophyAnimation();
+                this.context.showTrophy();
+                this.context.startTrophyAnimation();
 
             }
         }else if (this.context.gameLost()){
-            // inform user
-          //  this.context.makeToast("Obtuviste menos de 3 respuestas correctas en 5 intentos.");
-            // reset
             this.context.resetRondasyAciertos();
-            // ask to go home or retry game
             this.context.showRetryLayout();
         }else {
-            // player has chances to win -> play again
             this.context.newGame();
         }
     }

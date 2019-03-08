@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.GridView;
 
 import com.trabajofinal.razasypelajescercatomartinez.MainActivity;
 import com.trabajofinal.razasypelajescercatomartinez.R;
+import com.trabajofinal.razasypelajescercatomartinez.utils.audios.AudioPlayer;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
 
@@ -79,6 +82,11 @@ public class RecGrilla extends AppCompatActivity {
         RecGrillaAdapter customGridAdapter = new RecGrillaAdapter(this, R.layout.activity_rec_grilla_item, list);
         gridView.setAdapter(customGridAdapter);
     }
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public void onClickCaballo(View view) {
 
+        ArrayList<Integer> sounds = (ArrayList<Integer>) view.getTag() ;
+        AudioPlayer.wannaPlaySound(sounds, this);
+    }
 
 }
