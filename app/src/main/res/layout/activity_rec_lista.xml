@@ -21,7 +21,7 @@
             <LinearLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
-                android:layout_height="750dp"
+                android:layout_height="786dp"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -34,6 +34,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <ListView
+                        android:id="@+id/lista"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@+id/volver"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </ListView>
+
                     <Button
                         android:id="@+id/volver"
                         android:layout_width="88dp"
@@ -45,18 +57,6 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
 
-                    <ListView
-                        android:id="@+id/lista"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                    </ListView>
                 </android.support.constraint.ConstraintLayout>
 
             </LinearLayout>
