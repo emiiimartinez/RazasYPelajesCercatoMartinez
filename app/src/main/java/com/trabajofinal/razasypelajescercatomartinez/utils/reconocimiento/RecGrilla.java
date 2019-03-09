@@ -107,7 +107,7 @@ public class RecGrilla extends AppCompatActivity {
 
             cargarCruza();
             GridView listView = findViewById(R.id.grilla);
-            RecListaCruza grillaAdapter = new RecListaCruza(this, R.layout.activity_rec_grilla_cruza, list);
+            RecGrillaCruza grillaAdapter = new RecGrillaCruza(this, R.layout.activity_rec_grilla_cruza, list);
             listView.setAdapter(grillaAdapter);
 
         }
