@@ -33,7 +33,6 @@ public abstract class InteraccionManager {
     public InteraccionManager(JugarActivity context, Boolean playingLevel2) {
         this.context = context;
         this.caballoAcierto = new CaballoModel();
-        //this.whatToLookFor = "";
         this.searchingForRaza = false;
         this.searchingForPelaje = false;
         this.searchingForName = false;
@@ -79,7 +78,6 @@ public abstract class InteraccionManager {
         resetSoundImageToRegular();
         for (int i = 0; i < views.size(); i++) {
             CaballoModel randomHorse = caballosProvider.randomHorse();
-            // we dont wanna have the same horse attribute twice
             while(this.isAlreadyInViews( randomHorse, views) ){
                 randomHorse = caballosProvider.randomHorse();
             }
@@ -161,8 +159,7 @@ public abstract class InteraccionManager {
     }
 
     protected  Boolean viewValidationCondition( View view){
-        return ( ((CaballoModel)view.getTag()).getName() )
-                .contains(whatToLookFor);
+        return ( ((CaballoModel)view.getTag()).getName() ).contains(whatToLookFor);
     }
     protected  Boolean validateCruza( View view){
         return ( ((CaballoModel)view.getTag()).getPadres() ).contains(whatToLookFor);
@@ -211,7 +208,6 @@ public abstract class InteraccionManager {
 
     protected abstract Boolean viewValidationCondition();
 
-    // test
     protected void setImageResource(ImageView imageView, String img){
         if(img != ""){
             Drawable draw = context.getResources().getDrawable(context.getResources().getIdentifier(img,"drawable",context.getPackageName()));

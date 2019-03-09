@@ -39,7 +39,6 @@ public class JugarII extends InteraccionManager {
     @Override
     protected void initPossibleAnswersContainersArray() {
         fillHorsesImageViewsArray();
-        // set onclick listener
         setViewListItemsOnClickHandler(imageViews);
     }
     private void fillHorsesImageViewsArray() {
@@ -110,7 +109,6 @@ public class JugarII extends InteraccionManager {
 
     @Override
     public void putAnswerInGame() {
-        // if there is nothing matching the answer, upload horseToFind
         if ( !isAlreadyInViews(caballoAcierto, imageViews) ){
             Collections.shuffle(imageViews);
             ImageView randomImgView = imageViews.get(0);
