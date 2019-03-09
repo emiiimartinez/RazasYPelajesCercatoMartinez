@@ -160,7 +160,6 @@ public class JugarIP extends InteraccionManager {
 
     @Override
     public void putAnswerInGame() {
-        // if there is nothing matching the answer, upload horseToFind
         if ( !isAlreadyInViews(caballoAcierto, horsesTextViews) ){
             Random random = new Random();
             Integer randIndex = random.nextInt(horsesTextViews.size());
@@ -193,7 +192,6 @@ public class JugarIP extends InteraccionManager {
             }
         }
         if(!wasASound){
-            // an image view was clicked
             selectedTextView = (TextView) view;
             validateView();
         }

@@ -45,7 +45,6 @@ public class JugarPI extends InteraccionManager {
     @Override
     protected void initPossibleAnswersContainersArray() {
         fillHorsesImageViewsArray();
-        // set onclick listener
         setViewListItemsOnClickHandler(imageViews);
 
     }
@@ -121,7 +120,6 @@ public class JugarPI extends InteraccionManager {
 
     @Override
     public void putAnswerInGame() {
-        // if there is nothing matching the answer, upload horseToFind
         if ( !isAlreadyInViews(caballoAcierto, imageViews) ){
             Collections.shuffle(imageViews);
             ImageView randomImgView = imageViews.get(0);
@@ -143,10 +141,8 @@ public class JugarPI extends InteraccionManager {
     @Override
     public void manageOnClick(View view) {
         if (view == soundImgView){
-            //setImageResource( ((ImageView)this.context.findViewById(R.id.audioButton)), R.drawable.ic_audio_click);
             playHorseToFindSound();
         }else{
-            // se hizo click en una imagen
             selectedImageView = (ImageView) view;
             validateView();
         }

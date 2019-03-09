@@ -6,11 +6,9 @@ import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballoModel;
 import com.trabajofinal.razasypelajescercatomartinez.utils.caballos.CaballosProvider;
@@ -23,9 +21,8 @@ import java.util.Random;
 
 public class JugarActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // used by both interaction modes
     private CaballoModel caballoCorrecto;
-    private String whatToLookFor, lastLookedFor;
+    private String caballoAEncontrar, caballoAnterior;
     private ImageView volver;
     private InteraccionManager interaccionManager;
     private CaballosProvider caballosProvider;
@@ -35,11 +32,8 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // reset
         resetRondasyAciertos();
-        // layout according to the chosen interaction mode
         minijuego();
-        // let's play!
         newGame();
     }
 
@@ -58,7 +52,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     public void prepareCruza() {
         setContentView(R.layout.activity_jugar_ii);
         interaccionManager = new JugarII(this, playingLevel2());
-        // horses provider
         caballosProvider = new CaballosProvider(this);
     }
 
@@ -70,9 +63,7 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
             setContentView(R.layout.activity_jugar_ip);
             interaccionManager = new JugarIP(this, playingLevel2());
         }
-        // horses provider
         caballosProvider = new CaballosProvider(this);
-        // home btn
     }
 
     public void resetRondasyAciertos() {
@@ -82,7 +73,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
 
     public void startConfettiAnimation() {
-        // confetti
         ImageView confettiImgView = (ImageView) findViewById(R.id.confettiImageView);
         confettiImgView.setBackgroundResource(R.drawable.anim_confetti);
         confettiAnimation = (AnimationDrawable) confettiImgView.getBackground();
@@ -125,15 +115,12 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void next(View view) {
-        Log.d("!!!!GAME-FLOW", "next");
-        // -> select 'playing RPJ'
         if (playingRazasYPelajesJuntos()) {
             playCruza();
         } else {
             playRazasYPelajesJuntos();
         }
         minijuego();
-        // play again
         newGame();
     }
 
@@ -160,7 +147,6 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
 
     private Boolean playingWithBInteraction() {
         Integer interactionPref = getConfigSharedPrefs().getInt(getString(R.string.interaction_pref_key), R.id.InteracARadBtn);
-        Log.d("!!!!!!!!!!!!INTERACTION", "playingWithBInteraction? " + String.valueOf(interactionPref == R.id.InteracBRadBtn));
         return interactionPref == R.id.InteracBRadBtn;
     }
 
@@ -207,35 +193,33 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
     private void horseToFind() {
        if(playingCruza()){
        caballoCorrecto = caballosProvider.randomHorseCruza();
-       whatToLookFor = caballoCorrecto.getPadres();
+       caballoAEncontrar = caballoCorrecto.getPadres();
        }
        else{ caballoCorrecto = caballosProvider.randomHorse();
-           // si se trata del juego RPJ, pongo directamente como 'a buscar' al nombre de la foto del caballo
-           // random, sino, digo bueno, vamos a buscar o bien la raza o el pelaje asociado a la foto
         if (playingRazasYPelajesJuntos()) {
-           whatToLookFor = caballoCorrecto.getName();
+           caballoAEncontrar = caballoCorrecto.getName();
        } else {
-           whatToLookFor = randomRazaOPelaje();
+           caballoAEncontrar = randomRazaOPelaje();
        }
        }
-
 
     }
 
     private void determineHorseToFind() {
         horseToFind();
-        while (whatToLookFor.equals(lastLookedFor)) {
+        while (caballoAEncontrar.equals(caballoAnterior)) {
             horseToFind();
         }
-        lastLookedFor = whatToLookFor;
+        caballoAnterior = caballoAEncontrar;
+
     }
 
     private Boolean searchingForRaza() {
-        return caballosProvider.isAHorseRaza(whatToLookFor);
+        return caballosProvider.isAHorseRaza(caballoAEncontrar);
     }
 
     private Boolean searchingForPelaje() {
-        return caballosProvider.isAHorsePelaje(whatToLookFor);
+        return caballosProvider.isAHorsePelaje(caballoAEncontrar);
     }
 
     private Boolean searchingForNombre() {
@@ -266,33 +250,26 @@ public class JugarActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_jugar_next);
     }
     public void setearCruza(){
-        interaccionManager.busqueda(caballoCorrecto, whatToLookFor);
+        interaccionManager.busqueda(caballoCorrecto, caballoAEncontrar);
         interaccionManager.showWhatToLookFor();
         interaccionManager.showRespuestasCruza();
     }
 
     public void newGame() {
-        // new round
         rondas++;
-        // reset tags
         interaccionManager.resetViewsTags();
-        // determine horse to find
         determineHorseToFind();
 
         if(playingCruza()){
             setearCruza();
         } else {
-            interaccionManager.busqueda(caballoCorrecto, whatToLookFor, searchingForRaza(),
+            interaccionManager.busqueda(caballoCorrecto, caballoAEncontrar, searchingForRaza(),
                     searchingForPelaje(), searchingForNombre(), listeningToFemAudio());
-            // show in ui
             interaccionManager.showWhatToLookFor();
-            // populate img views with random imgs
             interaccionManager.showRespuestasPosibles();
        }
-        // put a random img view with the answer img ONLY if it isn't shown yet
         interaccionManager.putAnswerInGame();
     }
-
 
 
 }
