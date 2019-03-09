@@ -38,8 +38,8 @@ public class RecGrillaCruza extends ArrayAdapter<RecGrillaItem> {
             convertView = layoutInflater.inflate(resource, parent, false);
             dato = new RecItem();
 
-            dato.potrillo = convertView.findViewById(R.id.potrilloImg);
-            dato.padres = convertView.findViewById(R.id.padresImg);
+            dato.potrillo = convertView.findViewById(R.id.potrillo);
+            dato.padres = convertView.findViewById(R.id.padres);
             convertView.setTag(dato);
         }else{
             dato = (RecItem) convertView.getTag();
